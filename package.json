@@ -15,17 +15,14 @@
   },
   "dependencies": {
     "gatsby": "^3.10.2",
+    "gatsby-source-filesystem": "^3.11.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
+    "babel-preset-gatsby": "^1.11.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0",
     "prettier": "2.3.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
