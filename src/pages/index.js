@@ -1,3 +1,10 @@
+import GlobalStyle from "../styles/GlobalStyle";
+
 export default function Home() {
-  return <div>Hello world!</div>;
+  return (
+    <div>
+      <GlobalStyle />
+      <p>Hello World</p>
+    </div>
+  );
 }

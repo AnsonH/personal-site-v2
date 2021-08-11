@@ -1,7 +1,7 @@
 {
   "presets": [
     [
-      "babel-preset-gatsby",
+      "babel-preset-gatsby", // Enable React 17 JSX transform (https://bit.ly/3fQX9qS)
       {
         "reactRuntime": "automatic"
       }

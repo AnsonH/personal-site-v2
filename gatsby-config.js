@@ -9,6 +9,14 @@ module.exports = {
     title: "Anson Heung | Front-end Developer",
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`ubuntu:400,500`, `ubuntu mono:400,700`],
+        display: "swap", // Show fallback font before Google Font is fetched
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,4 +25,4 @@ module.exports = {
       },
     },
   ],
-}
+};
