@@ -3,6 +3,7 @@ import { css } from "styled-components";
 const variables = css`
   :root {
     // Colors
+    --red: #ff6860;
     --orange: #ff9900;
     --orange-hover: rgba(255, 153, 0, 0.2);
     --lime: #5fd700;

@@ -40,26 +40,18 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: var(--light-blue);
 
+    // Animated underline effect on hover (supports multi-line)
+    // https://codepen.io/kevinpowell/pen/MWYwgOz 
     &.text-link {
-      // Animated underline effect on hover
-      &::after {
-        content: "";
-        width: 100%;
-        height: 0.1rem;
-        position: absolute;
-        bottom: 0.1rem;
-        left: 0;
-        right: 0;
-        background-color: var(--light-blue);
-        transform: scaleX(0);
-        transition: transform 150ms ease-in-out;
-      }
+      background-image: linear-gradient(var(--light-blue), var(--light-blue));
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      background-size: 0% 0.1rem;
+      transition: background-size 150ms ease-in-out;
 
       &:hover,
       &:focus {
-        &::after {
-          transform: scaleX(1);
-        }
+        background-size: 100% 0.1rem;
       }
     }
   }

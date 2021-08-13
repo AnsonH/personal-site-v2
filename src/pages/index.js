@@ -1,12 +1,9 @@
-import GlobalStyle from "../styles/GlobalStyle";
-import SEO from "../components/SEO";
+import { Layout } from "../components";
 
 export default function Home() {
   return (
-    <div>
-      <SEO />
-      <GlobalStyle />
+    <Layout>
       <p>Hello World</p>
-    </div>
+    </Layout>
   );
 }
