@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import variables from "./variables";
+import { bp } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   ${variables}
@@ -82,6 +83,19 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 0;
     padding-left: 0;
     list-style: none;
+  }
+
+  .container {
+    margin: 0 2.5rem;
+
+    @media ${bp.md} {
+      margin: 0 4rem;
+    }
+
+    @media ${bp.lg} {
+      max-width: 122rem;
+      margin: 0 auto;
+    }
   }
 `;
 
