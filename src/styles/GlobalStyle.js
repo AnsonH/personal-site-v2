@@ -19,7 +19,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-
   *,
   *::before,
   *::after {
@@ -33,6 +32,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Ubuntu", var(--font-sans-system);
     background-color: var(--black);
     color: var(--light-gray);
+
+    // Blur whole site except the header when mobile dropdown is opened
+    &.blur #content > * {
+      filter: blur(5px);
+    }
   }
 
   a {

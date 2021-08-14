@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { bp } from "../../styles";
 import { navLinks } from "../../config";
+import { useOnClickOutside } from "../../hooks";
 
 const StyledMenu = styled.div`
   display: flex;
@@ -119,8 +121,16 @@ function HamburgerMenu() {
     setIsOpen(!isOpen);
   };
 
+  // Close the dropdown menu when user clicks outside
+  const menuRef = useRef();
+  useOnClickOutside(menuRef, () => setIsOpen(false));
+
   return (
-    <StyledMenu>
+    <StyledMenu ref={menuRef}>
+      <Helmet>
+        <body className={isOpen && "blur"} />
+      </Helmet>
+
       <HamburgerButton onClick={toggleMenu} aria-label="Open navigation menu">
         <HamburgerIcon className={isOpen && "open"} />
       </HamburgerButton>

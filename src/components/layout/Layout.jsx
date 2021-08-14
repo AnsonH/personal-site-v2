@@ -14,7 +14,8 @@ function Layout({ children }) {
           <GlobalStyle />
 
           <Header />
-          {children}
+
+          <div id="content">{children}</div>
         </ThemeProvider>
       </div>
     </>
