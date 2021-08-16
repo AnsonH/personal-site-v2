@@ -89,6 +89,8 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  ///// Global Classes /////
+
   .container {
     margin: 0 2.5rem;
 
@@ -97,6 +99,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     @media ${bp.lg} {
+      width: 100%;
       max-width: 122rem;
       margin: 0 auto;
     }

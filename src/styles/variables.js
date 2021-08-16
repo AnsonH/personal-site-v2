@@ -7,7 +7,6 @@ const variables = css`
     --orange: #ff9900;
     --orange-hover: rgba(255, 153, 0, 0.2);
     --lime: #5fd700;
-    --green: #265600;
     --light-blue: #53d5e4;
     --light-blue-hover: rgba(83, 213, 228, 0.2);
     --blue: #3a95a0;
@@ -20,12 +19,14 @@ const variables = css`
     --gray: #777777;
     --dark-gray: #505050;
     --black: #1f2122;
-    --black-overlay: rgba(31, 33, 34, 0.9);
 
     // Font stacks
     --font-sans-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
       "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     --font-mono-system: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+
+    // Transition
+    --easing: cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
 

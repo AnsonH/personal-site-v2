@@ -3,8 +3,8 @@
 ## Development
 
 ```bash
-# 1. Install the Gatsby CLI
-npm install -g gatsby-cli
+# 1. Install the Gatsby CLI & Yarn package manager if you haven't
+npm install -g gatsby-cli yarn
 
 #2. Install dependencies
 yarn

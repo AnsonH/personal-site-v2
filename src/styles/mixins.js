@@ -22,6 +22,14 @@ const mixins = {
     outline: 0.2rem dashed var(--light-blue);
     outline-offset: -0.2rem;
   `,
+
+  disableTextSelection: css`
+    user-select: none;
+    -ms-user-select: none; // IE
+    -moz-user-select: none; // Old versions of Firefox
+    -webkit-user-select: none; // Safari (Web)
+    -webkit-touch-callout: none; // Safari (iOS)
+  `,
 };
 
 export default mixins;
