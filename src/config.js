@@ -28,7 +28,7 @@ module.exports = {
     },
   ],
 
-  // Config. for React Typist, a library for animating typing animations in the home page Hero section
+  // Config for React Typist, a library for animating typing animations in the home page Hero section
   // https://github.com/jstejada/react-typist#typist-props
   reactTypistConfig: {
     avgTypingDelay: 30,
@@ -36,7 +36,17 @@ module.exports = {
     cursor: {
       blink: false,
       hideWhenDone: true,
-      hideWhenDoneDelay: 350,
+      hideWhenDoneDelay: 300,
+    },
+  },
+
+  // Config for ScrollReveal, a library for animating elements as they scroll into view
+  // https://scrollrevealjs.org/api/reveal.html
+  srConfig: {
+    panFromLeft: {
+      delay: 100,
+      distance: "10px",
+      origin: "left",
     },
   },
 };

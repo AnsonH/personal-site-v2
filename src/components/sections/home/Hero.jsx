@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { FaChevronRight } from "react-icons/fa";
 import { MdMailOutline, MdFileDownload } from "react-icons/md";
 import Typist from "react-typist";
+import ScrollReveal from "scrollreveal";
 import OutlineButton from "../../core/OutlineButton";
 import { bp } from "../../../styles";
-import { email, resumeUrl, reactTypistConfig } from "../../../config";
+import { email, resumeUrl, reactTypistConfig, srConfig } from "../../../config";
 
 const StyledSection = styled.section`
   padding: 4rem 0;
@@ -114,8 +115,9 @@ const WavingHand = styled.span`
   }
 `;
 
-const Content = styled.div`
+const Details = styled.div`
   padding: 0 0 0 0.5rem;
+  visibility: hidden;
 
   @media ${bp.md} {
     padding: 0 3.7rem;
@@ -132,7 +134,11 @@ const Content = styled.div`
 
 const Description = styled.p`
   margin: 4.5rem 0 3.5rem;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+
+  @media ${bp.lg} {
+    font-size: 1.6rem;
+  }
 `;
 
 const CTA = styled.div`
@@ -150,6 +156,15 @@ const CTA = styled.div`
 
 function Hero() {
   const [showSecondTitle, setShowSecondTitle] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+
+  const detailsRef = useRef();
+
+  useEffect(() => {
+    if (showDetails) {
+      ScrollReveal().reveal(detailsRef.current, srConfig.panFromLeft);
+    }
+  }, [showDetails]);
 
   return (
     <StyledSection>
@@ -159,11 +174,11 @@ function Hero() {
           <TerminalContainer>
             <TitleContainer>
               <StyledChevron aria-hidden="true" />
-              <Title>
+              <Title aria-label="Hi, I'm Anson">
                 <Typist
                   {...reactTypistConfig}
-                  startDelay={500}
-                  onTypingDone={() => setTimeout(() => setShowSecondTitle(true), 350)}
+                  startDelay={450}
+                  onTypingDone={() => setTimeout(() => setShowSecondTitle(true), 300)}
                 >
                   Hi, I&apos;m Anson<WavingHand>👋</WavingHand>
                 </Typist>
@@ -172,14 +187,18 @@ function Hero() {
 
             <TitleContainer hidden={!showSecondTitle}>
               <StyledChevron aria-hidden="true" />
-              <Title>
-                <Typist {...reactTypistConfig} startDelay={1800}>
+              <Title aria-label="I'm a front-end web developer.">
+                <Typist
+                  {...reactTypistConfig}
+                  startDelay={1700}
+                  onTypingDone={() => setTimeout(() => setShowDetails(true), 50)}
+                >
                   I&apos;m a front-end web developer.
                 </Typist>
               </Title>
             </TitleContainer>
 
-            <Content>
+            <Details ref={detailsRef}>
               <Description>
                 I’m a year 4 student from HKUST who is passionate about building websites with stunning interfaces and
                 experiences.
@@ -204,7 +223,7 @@ function Hero() {
                   Resume
                 </OutlineButton>
               </CTA>
-            </Content>
+            </Details>
           </TerminalContainer>
         </Terminal>
       </div>

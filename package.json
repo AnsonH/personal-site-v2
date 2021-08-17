@@ -27,6 +27,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-typist": "^2.0.5",
+    "scrollreveal": "^4.0.9",
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
