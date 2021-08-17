@@ -27,4 +27,16 @@ module.exports = {
       url: "/#contact",
     },
   ],
+
+  // Config. for React Typist, a library for animating typing animations in the home page Hero section
+  // https://github.com/jstejada/react-typist#typist-props
+  reactTypistConfig: {
+    avgTypingDelay: 30,
+    stdTypingDelay: 0,
+    cursor: {
+      blink: false,
+      hideWhenDone: true,
+      hideWhenDoneDelay: 350,
+    },
+  },
 };

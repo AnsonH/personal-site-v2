@@ -1,9 +1,11 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { FaChevronRight } from "react-icons/fa";
 import { MdMailOutline, MdFileDownload } from "react-icons/md";
+import Typist from "react-typist";
 import OutlineButton from "../../core/OutlineButton";
 import { bp } from "../../../styles";
-import { email, resumeUrl } from "../../../config";
+import { email, resumeUrl, reactTypistConfig } from "../../../config";
 
 const StyledSection = styled.section`
   padding: 4rem 0;
@@ -53,6 +55,7 @@ const TerminalContainer = styled.div`
 const TitleContainer = styled.div`
   display: flex;
   margin-bottom: 2rem;
+  visibility: ${(props) => (props.hidden ? "hidden" : "visible")};
 `;
 
 const StyledChevron = styled(FaChevronRight)`
@@ -146,6 +149,8 @@ const CTA = styled.div`
 `;
 
 function Hero() {
+  const [showSecondTitle, setShowSecondTitle] = useState(false);
+
   return (
     <StyledSection>
       <div className="container">
@@ -155,13 +160,23 @@ function Hero() {
             <TitleContainer>
               <StyledChevron aria-hidden="true" />
               <Title>
-                Hi, I&apos;m Anson<WavingHand>👋</WavingHand>
+                <Typist
+                  {...reactTypistConfig}
+                  startDelay={500}
+                  onTypingDone={() => setTimeout(() => setShowSecondTitle(true), 350)}
+                >
+                  Hi, I&apos;m Anson<WavingHand>👋</WavingHand>
+                </Typist>
               </Title>
             </TitleContainer>
 
-            <TitleContainer>
+            <TitleContainer hidden={!showSecondTitle}>
               <StyledChevron aria-hidden="true" />
-              <Title>I&apos;m a front-end web developer.</Title>
+              <Title>
+                <Typist {...reactTypistConfig} startDelay={1800}>
+                  I&apos;m a front-end web developer.
+                </Typist>
+              </Title>
             </TitleContainer>
 
             <Content>
