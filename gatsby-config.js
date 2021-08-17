@@ -36,12 +36,12 @@ module.exports = {
         display: "swap", // Show fallback font before Google Font is fetched
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projects`,
-        path: `${__dirname}/content/projects/`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `projects`,
+    //     path: `${__dirname}/content/projects/`,
+    //   },
+    // },
   ],
 };

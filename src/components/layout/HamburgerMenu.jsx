@@ -23,7 +23,7 @@ const HamburgerButton = styled.button`
   opacity: 1;
   border: none;
   outline: none; // Remove default outline on click
-  transition: all 150ms ease-in-out;
+  transition: all 150ms var(--easing);
 
   &:hover {
     cursor: pointer;
@@ -40,7 +40,7 @@ const HamburgerIcon = styled.div`
   height: 0.3rem;
   width: 2.4rem;
   background-color: var(--white);
-  transition: all 150ms ease-in-out;
+  transition: all 150ms var(--easing);
 
   &::before,
   &::after {
@@ -49,7 +49,7 @@ const HamburgerIcon = styled.div`
     height: 0.3rem;
     width: 2.4rem;
     background-color: var(--white);
-    transition: all 150ms ease-in-out;
+    transition: all 150ms var(--easing);
   }
 
   // 1st line
@@ -86,7 +86,7 @@ const DropdownMenu = styled.div`
   left: 0rem;
   width: 100%;
   background-color: var(--dark-cyan);
-  transition: height 250ms ease-in-out;
+  transition: height 250ms var(--easing);
   overflow: hidden; // Hide links when not opened
 
   &.open {
@@ -105,7 +105,7 @@ const StyledList = styled.ul`
     width: 100%;
     padding: 1.5rem 0;
     color: var(--white);
-    transition: background-color 150ms ease-in-out;
+    transition: background-color 150ms var(--easing);
 
     &:hover,
     &:focus {

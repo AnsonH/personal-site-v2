@@ -26,7 +26,7 @@ const StyledNav = styled.nav`
 const LogoAnchor = styled(Link)`
   padding: 1.5rem 0.5rem;
   display: inline-block;
-  transition: all 150ms ease-in-out;
+  transition: all 150ms var(--easing);
 
   &:hover {
     background-color: var(--blue-hover);
@@ -56,7 +56,7 @@ const StyledLinks = styled.div`
       display: inline-block;
       padding: 1.5rem 2rem;
       color: var(--white);
-      transition: all 150ms ease-in-out;
+      transition: all 150ms var(--easing);
 
       &:hover {
         background-color: var(--blue-hover);

@@ -52,7 +52,7 @@ const GlobalStyle = createGlobalStyle`
       background-repeat: no-repeat;
       background-position: bottom left;
       background-size: 0% 0.1rem;
-      transition: background-size 150ms ease-in-out;
+      transition: background-size 150ms var(--easing);
 
       &:hover,
       &:focus {

@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   color: ${(props) => props.color};
   font-family: "Ubuntu Mono", var(--font-mono-system);
   font-weight: 700;
-  transition: background-color 150ms ease-in-out;
+  transition: background-color 150ms var(--easing);
 
   &:hover,
   &:focus {
