@@ -74,7 +74,7 @@ function Header() {
     <StyledHeader>
       <div className="container">
         <StyledNav>
-          <LogoAnchor to="/">
+          <LogoAnchor to="/" aria-label="Home">
             <NavLogo />
           </LogoAnchor>
 
