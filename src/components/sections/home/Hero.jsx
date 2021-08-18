@@ -118,7 +118,11 @@ const WavingHand = styled.span`
 
 const Details = styled.div`
   padding: 0 0 0 0.5rem;
-  visibility: ${(props) => (props.visible ? "visible" : "hidden")};
+  visibility: hidden;
+
+  @media (prefers-reduced-motion: reduce) {
+    visibility: visible;
+  }
 
   @media ${bp.md} {
     padding: 0 3.7rem;
@@ -155,13 +159,24 @@ const CTA = styled.div`
   }
 `;
 
+const isRenderingOnServer = typeof window === "undefined";
+
 function Hero() {
   const prefersReducedMotion = usePrefersReducedMotion();
 
+  const [showFirstTitle, setShowFirstTitle] = useState(false);
   const [showSecondTitle, setShowSecondTitle] = useState(prefersReducedMotion);
   const [showDetails, setShowDetails] = useState(prefersReducedMotion);
 
   const detailsRef = useRef();
+
+  // Both 1st & 2nd titles are set to have visibility hidden on page load. After the browser downloads JS bundle
+  // and the React code start running, we set visibility of 1st title to visible so that the typing animation
+  // starts. If we don't do that, the titles will be visible on page load for a split second, then becomes hidden
+  // after the browser downloads the JS bundle.
+  useEffect(() => {
+    setShowFirstTitle(true);
+  }, []);
 
   useEffect(() => {
     if (!prefersReducedMotion && showDetails) {
@@ -175,7 +190,7 @@ function Hero() {
         <Terminal>
           <TrafficLights />
           <TerminalContainer>
-            <TitleContainer visible>
+            <TitleContainer visible={isRenderingOnServer ? false : showFirstTitle}>
               <StyledChevron aria-hidden="true" />
               <Title aria-label="Hi, I'm Anson">
                 {prefersReducedMotion ? (
@@ -192,7 +207,11 @@ function Hero() {
               </Title>
             </TitleContainer>
 
-            <TitleContainer visible={showSecondTitle}>
+            {/* If we simply set `visible={showSecondTitle}`, the title would somehow be visible immediately
+             * on page load in the production build but not in development build. To fix this, we force this prop
+             * to be `false` if we're building for production (i.e., rendering on server)
+             */}
+            <TitleContainer visible={isRenderingOnServer ? false : showSecondTitle}>
               <StyledChevron aria-hidden="true" />
               <Title aria-label="I'm a front-end web developer.">
                 {prefersReducedMotion ? (

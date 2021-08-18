@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     scroll-padding-top: 5.5rem; // Prevent fixed header overlaps with page anchors
 
     // Disable smooth scrolling if user prefers reduced motion
-    @media screen and (prefers-reduced-motion: reduce) {
+    @media (prefers-reduced-motion: reduce) {
       & {
         scroll-behavior: auto;
       }
