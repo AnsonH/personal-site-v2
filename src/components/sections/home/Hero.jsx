@@ -4,10 +4,10 @@ import { FaChevronRight } from "react-icons/fa";
 import { MdMailOutline, MdFileDownload } from "react-icons/md";
 import Typist from "react-typist";
 import ScrollReveal from "scrollreveal";
-import OutlineButton from "../../core/OutlineButton";
+import { OutlineButton, Wrapper } from "../../core";
+import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
 import { email, resumeUrl, reactTypistConfig, srConfig } from "../../../config";
-import { usePrefersReducedMotion } from "../../../hooks";
 
 const StyledSection = styled.section`
   padding: 4rem 0;
@@ -171,7 +171,7 @@ function Hero() {
 
   return (
     <StyledSection>
-      <div className="container">
+      <Wrapper>
         <Terminal>
           <TrafficLights />
           <TerminalContainer>
@@ -237,7 +237,7 @@ function Hero() {
             </Details>
           </TerminalContainer>
         </Terminal>
-      </div>
+      </Wrapper>
     </StyledSection>
   );
 }

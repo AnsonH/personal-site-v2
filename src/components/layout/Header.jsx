@@ -2,7 +2,8 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { bp } from "../../styles";
 import { navLinks } from "../../config";
-import NavLogo from "../icons/NavLogo";
+import { Wrapper } from "../core";
+import { NavLogo } from "../icons";
 import HamburgerMenu from "./HamburgerMenu";
 
 const StyledHeader = styled.header`
@@ -72,7 +73,7 @@ const StyledLinks = styled.div`
 function Header() {
   return (
     <StyledHeader>
-      <div className="container">
+      <Wrapper>
         <StyledNav>
           <LogoAnchor to="/" aria-label="Home">
             <NavLogo />
@@ -90,7 +91,7 @@ function Header() {
 
           <HamburgerMenu />
         </StyledNav>
-      </div>
+      </Wrapper>
     </StyledHeader>
   );
 }
