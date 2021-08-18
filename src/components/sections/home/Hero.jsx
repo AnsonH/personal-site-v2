@@ -7,6 +7,7 @@ import ScrollReveal from "scrollreveal";
 import OutlineButton from "../../core/OutlineButton";
 import { bp } from "../../../styles";
 import { email, resumeUrl, reactTypistConfig, srConfig } from "../../../config";
+import { usePrefersReducedMotion } from "../../../hooks";
 
 const StyledSection = styled.section`
   padding: 4rem 0;
@@ -56,7 +57,7 @@ const TerminalContainer = styled.div`
 const TitleContainer = styled.div`
   display: flex;
   margin-bottom: 2rem;
-  visibility: ${(props) => (props.hidden ? "hidden" : "visible")};
+  visibility: ${(props) => (props.visible ? "visible" : "hidden")};
 `;
 
 const StyledChevron = styled(FaChevronRight)`
@@ -117,7 +118,7 @@ const WavingHand = styled.span`
 
 const Details = styled.div`
   padding: 0 0 0 0.5rem;
-  visibility: hidden;
+  visibility: ${(props) => (props.visible ? "visible" : "hidden")};
 
   @media ${bp.md} {
     padding: 0 3.7rem;
@@ -155,13 +156,15 @@ const CTA = styled.div`
 `;
 
 function Hero() {
-  const [showSecondTitle, setShowSecondTitle] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  const [showSecondTitle, setShowSecondTitle] = useState(prefersReducedMotion);
+  const [showDetails, setShowDetails] = useState(prefersReducedMotion);
 
   const detailsRef = useRef();
 
   useEffect(() => {
-    if (showDetails) {
+    if (!prefersReducedMotion && showDetails) {
       ScrollReveal().reveal(detailsRef.current, srConfig.panFromLeft);
     }
   }, [showDetails]);
@@ -172,33 +175,41 @@ function Hero() {
         <Terminal>
           <TrafficLights />
           <TerminalContainer>
-            <TitleContainer>
+            <TitleContainer visible>
               <StyledChevron aria-hidden="true" />
               <Title aria-label="Hi, I'm Anson">
-                <Typist
-                  {...reactTypistConfig}
-                  startDelay={450}
-                  onTypingDone={() => setTimeout(() => setShowSecondTitle(true), 300)}
-                >
-                  Hi, I&apos;m Anson<WavingHand>👋</WavingHand>
-                </Typist>
+                {prefersReducedMotion ? (
+                  <span>Hi, I&apos;m Anson👋</span>
+                ) : (
+                  <Typist
+                    {...reactTypistConfig}
+                    startDelay={450}
+                    onTypingDone={() => setTimeout(() => setShowSecondTitle(true), 300)}
+                  >
+                    Hi, I&apos;m Anson<WavingHand>👋</WavingHand>
+                  </Typist>
+                )}
               </Title>
             </TitleContainer>
 
-            <TitleContainer hidden={!showSecondTitle}>
+            <TitleContainer visible={showSecondTitle}>
               <StyledChevron aria-hidden="true" />
               <Title aria-label="I'm a front-end web developer.">
-                <Typist
-                  {...reactTypistConfig}
-                  startDelay={1700}
-                  onTypingDone={() => setTimeout(() => setShowDetails(true), 50)}
-                >
-                  I&apos;m a front-end web developer.
-                </Typist>
+                {prefersReducedMotion ? (
+                  <span>I&apos;m a front-end web developer.</span>
+                ) : (
+                  <Typist
+                    {...reactTypistConfig}
+                    startDelay={1700}
+                    onTypingDone={() => setTimeout(() => setShowDetails(true), 50)}
+                  >
+                    I&apos;m a front-end web developer.
+                  </Typist>
+                )}
               </Title>
             </TitleContainer>
 
-            <Details ref={detailsRef}>
+            <Details ref={detailsRef} visible={prefersReducedMotion}>
               <Description>
                 I’m a year 4 student from HKUST who is passionate about building websites with stunning interfaces and
                 experiences.
