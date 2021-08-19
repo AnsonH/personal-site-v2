@@ -12,7 +12,7 @@ const variables = css`
     --blue: #3a95a0;
     --blue-hover: #3a96a080;
     --cyan: #21555b;
-    --dark-cyan: #2f434a;
+    --dark-cyan: #354a52;
     --white: #ffffff;
     --light-gray: #c1c1c1;
     --light-gray-hover: rgba(178, 178, 178, 0.17);

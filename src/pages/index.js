@@ -1,9 +1,10 @@
-import { Hero, Layout } from "../components";
+import { About, Hero, Layout } from "../components";
 
 export default function Home() {
   return (
     <Layout>
       <Hero />
+      <About />
     </Layout>
   );
 }

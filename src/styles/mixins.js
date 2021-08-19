@@ -25,8 +25,6 @@ const mixins = {
 
   disableTextSelection: css`
     user-select: none;
-    -ms-user-select: none; // IE
-    -moz-user-select: none; // Old versions of Firefox
     -webkit-user-select: none; // Safari (Web)
     -webkit-touch-callout: none; // Safari (iOS)
   `,

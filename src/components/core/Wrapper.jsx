@@ -1,5 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { bp } from "../../styles";
+
+const paddingY = css`
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  @media ${bp.lg} {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+`;
 
 const Wrapper = styled.div`
   margin: 0 2.5rem;
@@ -13,6 +23,8 @@ const Wrapper = styled.div`
     max-width: 122rem;
     margin: 0 auto;
   }
+
+  ${(props) => (props.paddingY ? paddingY : null)}
 `;
 
 export default Wrapper;

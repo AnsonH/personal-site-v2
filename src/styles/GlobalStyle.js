@@ -9,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%; // Default font size = 16px, --> 10px = 1rem
     box-sizing: border-box;
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem; // Prevent fixed header overlaps with page anchors
 
     // Disable smooth scrolling if user prefers reduced motion
     @media (prefers-reduced-motion: reduce) {
@@ -52,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
       background-repeat: no-repeat;
       background-position: bottom left;
       background-size: 0% 0.1rem;
-      transition: background-size 150ms var(--easing);
+      transition: background-size 250ms var(--easing);
 
       &:hover,
       &:focus {
@@ -74,6 +73,66 @@ const GlobalStyle = createGlobalStyle`
     color: var(--white);
     font-family: "Ubuntu Mono", var(--font-mono-system);
     line-height: 1.1;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    text-align: center;
+
+    @media ${bp.md} {
+      margin-bottom: 6rem;
+      font-size: 3rem;
+    }
+
+    @media ${bp.lg} {
+      font-size: 3.3rem;
+    }
+
+    @media ${bp.xl} {
+      font-size: 3.6rem;
+    }
+
+    &::before,
+    &::after {
+      content: "⠿⠿⠿";
+      color: var(--dark-cyan);
+      font-weight: 300;
+      font-size: 2rem;
+      margin-top: 0.5rem;
+
+      @media ${bp.md} {
+        content: "⠿⠿⠿⠿⠿";
+        font-size: 2.6rem;
+      }
+
+      @media ${bp.lg} {
+        font-size: 2.9rem;
+      }
+
+      @media ${bp.xl} {
+        font-size: 3.1rem;
+      }
+    }
+
+    &::before {
+      margin-right: 2.2rem;
+
+      @media ${bp.lg} {
+        margin-right: 3rem;
+      }
+    }
+
+    &::after {
+      margin-left: 2.2rem;
+
+      @media ${bp.lg} {
+        margin-left: 3rem;
+      }
+    }
   }
 
   p {

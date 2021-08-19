@@ -16,6 +16,9 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -32,16 +35,43 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`ubuntu:400,500`, `ubuntu mono:400,700`],
+        fonts: [`ubuntu:400,500,700`, `ubuntu mono:400,700`],
         display: "swap", // Show fallback font before Google Font is fetched
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `projects`,
-    //     path: `${__dirname}/content/projects/`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content/`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            // Add attributes to transformed HTML
+            // https://www.gatsbyjs.com/plugins/gatsby-remark-default-html-attrs/
+            resolve: `gatsby-remark-default-html-attrs`,
+            options: {
+              a: {
+                // Anchor tags
+                className: "text-link",
+                target: "_blank",
+                rel: "noreferrer",
+              },
+            },
+          },
+        ],
+      },
+    },
   ],
 };
