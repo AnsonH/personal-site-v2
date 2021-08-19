@@ -67,7 +67,7 @@ const HamburgerIcon = styled.div`
   &.open {
     // If we animate opacity to 0, it also applies to ::before & ::after, causing the 3 lines will disappear.
     // A workaround is to set background color of middle line to be same as the navbar background to make it go away
-    background-color: var(--dark-cyan);
+    background-color: var(--cyan);
 
     &::before {
       transform: translate(1px, -7px) rotate(45deg);
@@ -85,7 +85,7 @@ const DropdownMenu = styled.div`
   top: 5rem;
   left: 0rem;
   width: 100%;
-  background-color: var(--dark-cyan);
+  background-color: var(--cyan);
   transition: height 250ms var(--easing);
   overflow: hidden; // Hide links when not opened
 

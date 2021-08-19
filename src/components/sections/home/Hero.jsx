@@ -150,7 +150,7 @@ const CTA = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 540px) {
+  @media (min-width: 560px) {
     flex-direction: row;
 
     a:not(:last-child) {
@@ -190,7 +190,7 @@ function Hero() {
         <Terminal>
           <TrafficLights />
           <TerminalContainer>
-            <TitleContainer visible={isRenderingOnServer ? false : showFirstTitle}>
+            <TitleContainer visible={showFirstTitle}>
               <StyledChevron aria-hidden="true" />
               <Title aria-label="Hi, I'm Anson">
                 {prefersReducedMotion ? (

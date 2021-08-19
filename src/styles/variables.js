@@ -11,8 +11,8 @@ const variables = css`
     --light-blue-hover: rgba(83, 213, 228, 0.2);
     --blue: #3a95a0;
     --blue-hover: #3a96a080;
-    --cyan: #436069;
-    --dark-cyan: #21555b;
+    --cyan: #21555b;
+    --dark-cyan: #2f434a;
     --white: #ffffff;
     --light-gray: #c1c1c1;
     --light-gray-hover: rgba(178, 178, 178, 0.17);
