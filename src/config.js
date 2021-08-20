@@ -48,5 +48,10 @@ module.exports = {
       distance: "10px",
       origin: "left",
     },
+    popUp: {
+      delay: 200,
+      scale: 0.92,
+      viewFactor: 0.25,
+    },
   },
 };

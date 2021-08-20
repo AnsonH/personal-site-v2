@@ -1,11 +1,15 @@
+import { useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { IoLogoJavascript, IoLogoReact, IoLogoSass } from "react-icons/io5";
 import { SiGit, SiLaravel, SiPhp, SiGatsby } from "react-icons/si";
+import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { bp } from "../../../styles";
 import { Wrapper } from "../../core";
+import { srConfig } from "../../../config";
 import { Html, Python } from "../../icons";
+import { usePrefersReducedMotion } from "../../../hooks";
 
 const Content = styled.div`
   display: flex;
@@ -39,8 +43,10 @@ const ImageWrapper = styled.div`
     max-width: 26rem;
   }
 
-  &:hover {
-    border-radius: 1rem;
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover {
+      border-radius: 1rem;
+    }
   }
 `;
 
@@ -143,11 +149,19 @@ function About() {
       }
     }
   `);
-
   const descriptionHtml = data.markdownRemark.html;
 
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const aboutRef = useRef();
+
+  useEffect(() => {
+    if (!prefersReducedMotion) {
+      ScrollReveal().reveal(aboutRef.current, srConfig.popUp);
+    }
+  }, []);
+
   return (
-    <section id="about">
+    <section id="about" ref={aboutRef}>
       <Wrapper paddingY>
         <h2>About Me</h2>
         <Content>
