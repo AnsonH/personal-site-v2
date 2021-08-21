@@ -1,19 +1,19 @@
 import { useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import { IoDocumentTextSharp } from "react-icons/io5";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
-import { srConfig } from "../../../config";
-import { Tabs, Wrapper } from "../../core";
+import { resumeUrl, srConfig } from "../../../config";
+import { OutlineButton, Tabs, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
 
-const Content = styled.div`
-  position: relative;
-  margin-bottom: 8rem;
+const JobsWrapper = styled.div`
+  margin-bottom: 9rem;
 
   @media ${bp.lg} {
     ${({ theme }) => theme.mixins.paddingX};
-    margin: 0 auto 9rem;
+    margin: 0 auto 10rem;
     max-width: 90rem;
   }
 `;
@@ -64,6 +64,18 @@ const WorkDescription = styled.div`
   }
 `;
 
+const ResumeWrapper = styled.div`
+  p {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  // Resume button
+  a {
+    margin: 0 auto;
+  }
+`;
+
 function Experience() {
   const data = useStaticQuery(graphql`
     query Experience {
@@ -100,7 +112,7 @@ function Experience() {
     <section id="experience" ref={experienceRef}>
       <Wrapper paddingY>
         <h2>Experience</h2>
-        <Content>
+        <JobsWrapper>
           <Tabs>
             <Tabs.TabList>
               {jobs.map((job, i) => (
@@ -129,7 +141,19 @@ function Experience() {
               })}
             </Tabs.Panels>
           </Tabs>
-        </Content>
+        </JobsWrapper>
+        <ResumeWrapper>
+          <p>Interested in my full resume?</p>
+          <OutlineButton
+            anchor
+            color="var(--light-blue)"
+            hoverColor="var(--light-blue-hover)"
+            hrefLink={resumeUrl}
+            icon={<IoDocumentTextSharp fontSize={24} />}
+          >
+            Resume
+          </OutlineButton>
+        </ResumeWrapper>
       </Wrapper>
     </section>
   );

@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { FaChevronRight } from "react-icons/fa";
-import { MdMailOutline, MdFileDownload } from "react-icons/md";
+import { MdMailOutline } from "react-icons/md";
+import { IoDocumentTextSharp } from "react-icons/io5";
 import Typist from "react-typist";
 import ScrollReveal from "scrollreveal";
 import { OutlineButton, Wrapper } from "../../core";
@@ -248,7 +249,7 @@ function Hero() {
                   color="var(--light-blue)"
                   hoverColor="var(--light-blue-hover)"
                   hrefLink={resumeUrl}
-                  icon={<MdFileDownload fontSize={24} />}
+                  icon={<IoDocumentTextSharp fontSize={24} />}
                 >
                   Resume
                 </OutlineButton>

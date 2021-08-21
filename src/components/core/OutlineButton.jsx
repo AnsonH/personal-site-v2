@@ -12,6 +12,7 @@ const StyledButton = styled.button`
   border-radius: 0.5rem;
   color: ${(props) => props.color};
   font-family: "Ubuntu Mono", var(--font-mono-system);
+  font-size: 1.7rem;
   font-weight: 700;
   transition: background-color 150ms var(--easing);
 
