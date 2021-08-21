@@ -192,7 +192,7 @@ function Hero() {
           <TrafficLights />
           <TerminalContainer>
             <TitleContainer visible={showFirstTitle}>
-              <StyledChevron aria-hidden="true" />
+              <StyledChevron aria-hidden />
               <Title aria-label="Hi, I'm Anson">
                 {prefersReducedMotion ? (
                   <span>Hi, I&apos;m Anson👋</span>
@@ -213,7 +213,7 @@ function Hero() {
              * to be `false` if we're building for production (i.e., rendering on server)
              */}
             <TitleContainer visible={isRenderingOnServer ? false : showSecondTitle}>
-              <StyledChevron aria-hidden="true" />
+              <StyledChevron aria-hidden />
               <Title aria-label="I'm a front-end web developer.">
                 {prefersReducedMotion ? (
                   <span>I&apos;m a front-end web developer.</span>

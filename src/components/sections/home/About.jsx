@@ -2,13 +2,13 @@ import { useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { IoLogoJavascript, IoLogoReact, IoLogoSass } from "react-icons/io5";
-import { SiGit, SiLaravel, SiPhp, SiGatsby } from "react-icons/si";
+import { SiGit, SiLaravel, SiPhp } from "react-icons/si";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { srConfig } from "../../../config";
 import { Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
-import { Html, Python } from "../../icons";
+import { Gatsby, Html, Python } from "../../icons";
 import { bp } from "../../../styles";
 
 const Content = styled.div`
@@ -91,49 +91,55 @@ const Skills = styled.div`
   }
 `;
 
+const skillIconProps = {
+  width: "2.5rem", // For custom icons in src/components/icons
+  fontSize: 25, // For React Icons
+  "aria-hidden": true,
+};
+
 const skills = [
   // List 1
   [
     {
-      icon: <Html width="2.5rem" />,
+      icon: <Html {...skillIconProps} />,
       label: "HTML & CSS",
     },
     {
-      icon: <IoLogoSass color="#CD6799" fontSize={25} />,
+      icon: <IoLogoSass color="#CD6799" {...skillIconProps} />,
       label: "Sass",
     },
     {
-      icon: <IoLogoJavascript color="#F7DF1E" fontSize={25} />,
+      icon: <IoLogoJavascript color="#F7DF1E" {...skillIconProps} />,
       label: "Javascript (ES6+)",
     },
   ],
   // List 2
   [
     {
-      icon: <IoLogoReact color="#00D8FF" fontSize={25} />,
+      icon: <IoLogoReact color="#00D8FF" {...skillIconProps} />,
       label: "React",
     },
     {
-      icon: <SiGatsby color="#7F59AE" fontSize={25} />,
+      icon: <Gatsby {...skillIconProps} />,
       label: "Gatsby",
     },
     {
-      icon: <Python width="2.5rem" />,
+      icon: <Python {...skillIconProps} />,
       label: "Python",
     },
   ],
   // List 3
   [
     {
-      icon: <SiPhp color="#777BB3" fontSize={25} />,
+      icon: <SiPhp color="#777BB3" {...skillIconProps} />,
       label: "PHP",
     },
     {
-      icon: <SiLaravel color="#FF2D20" fontSize={25} />,
+      icon: <SiLaravel color="#FF2D20" {...skillIconProps} />,
       label: "Laravel",
     },
     {
-      icon: <SiGit color="#DE4C36" fontSize={25} />,
+      icon: <SiGit color="#DE4C36" {...skillIconProps} />,
       label: "Git & GitHub",
     },
   ],

@@ -44,7 +44,7 @@ function OutlineButton({ anchor, children, color, hoverColor, hrefLink, icon }) 
 
   return (
     <StyledButton {...anchorProps} color={color} hoverColor={hoverColor}>
-      {icon && <Icon aria-hidden="true">{icon}</Icon>}
+      {icon && <Icon aria-hidden>{icon}</Icon>}
       <span>{children}</span>
     </StyledButton>
   );
