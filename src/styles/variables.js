@@ -27,6 +27,10 @@ const variables = css`
 
     // Transition
     --easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+    // Components-related
+    --tab-button-width: 10rem;
+    --tab-button-height: 4rem;
   }
 `;
 

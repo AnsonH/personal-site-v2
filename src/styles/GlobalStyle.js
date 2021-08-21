@@ -135,6 +135,19 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  h3 {
+    margin: 0 0 1rem;
+    font-size: 1.9rem;
+    font-family: "Ubuntu", var(--font-sans-system);
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--white);
+
+    @media ${bp.lg} {
+      font-size: 2.2rem;
+    }
+  }
+
   p {
     margin-top: 0;
     margin-bottom: 3rem;

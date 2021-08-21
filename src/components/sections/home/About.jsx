@@ -5,11 +5,11 @@ import { IoLogoJavascript, IoLogoReact, IoLogoSass } from "react-icons/io5";
 import { SiGit, SiLaravel, SiPhp, SiGatsby } from "react-icons/si";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
-import { bp } from "../../../styles";
-import { Wrapper } from "../../core";
 import { srConfig } from "../../../config";
-import { Html, Python } from "../../icons";
+import { Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
+import { Html, Python } from "../../icons";
+import { bp } from "../../../styles";
 
 const Content = styled.div`
   display: flex;
@@ -43,10 +43,8 @@ const ImageWrapper = styled.div`
     max-width: 26rem;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    &:hover {
-      border-radius: 1rem;
-    }
+  &:hover {
+    border-radius: 1rem;
   }
 `;
 
