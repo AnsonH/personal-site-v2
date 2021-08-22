@@ -18,10 +18,6 @@ const StyledHeader = styled.header`
 const StyledNav = styled.nav`
   height: 5rem;
   ${({ theme }) => theme.mixins.flexBetween};
-
-  @media ${bp.lg} {
-    ${({ theme }) => theme.mixins.paddingX};
-  }
 `;
 
 const LogoAnchor = styled(Link)`
@@ -73,7 +69,7 @@ const StyledLinks = styled.div`
 function Header() {
   return (
     <StyledHeader>
-      <Wrapper>
+      <Wrapper paddingX_lg>
         <StyledNav>
           <LogoAnchor to="/" aria-label="Home">
             <NavLogo />

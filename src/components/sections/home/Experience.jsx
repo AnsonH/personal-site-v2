@@ -12,9 +12,8 @@ const JobsWrapper = styled.div`
   margin-bottom: 9rem;
 
   @media ${bp.lg} {
-    ${({ theme }) => theme.mixins.paddingX};
     margin: 0 auto 10rem;
-    max-width: 90rem;
+    max-width: 86rem;
   }
 `;
 

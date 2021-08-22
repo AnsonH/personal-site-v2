@@ -17,7 +17,6 @@ const Content = styled.div`
   align-items: center;
 
   @media ${bp.lg} {
-    ${({ theme }) => theme.mixins.paddingX};
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 7rem;
@@ -165,7 +164,7 @@ function About() {
 
   return (
     <section id="about" ref={aboutRef}>
-      <Wrapper paddingY>
+      <Wrapper paddingX_lg paddingY>
         <h2>About Me</h2>
         <Content>
           <ImageWrapper>

@@ -13,11 +13,6 @@ const mixins = {
     justify-content: space-between;
   `,
 
-  paddingX: css`
-    padding-left: 4rem;
-    padding-right: 4rem;
-  `,
-
   dashedOutline: css`
     outline: 0.2rem dashed var(--light-blue);
     outline-offset: -0.2rem;

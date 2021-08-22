@@ -10,12 +10,6 @@ import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const ProjectList = styled.ul`
-  @media ${bp.lg} {
-    ${({ theme }) => theme.mixins.paddingX};
-  }
-`;
-
 const ProjectItem = styled.li`
   display: flex;
   align-items: center;
@@ -139,9 +133,9 @@ function Projects() {
 
   return (
     <section id="projects">
-      <Wrapper paddingY>
+      <Wrapper paddingX_lg paddingY>
         <h2 ref={titleRef}>Projects</h2>
-        <ProjectList>
+        <ul>
           {projects.map((project, index) => {
             const { demo, github, tech, title, thumbnail } = project.frontmatter;
 
@@ -171,7 +165,7 @@ function Projects() {
               </ProjectItem>
             );
           })}
-        </ProjectList>
+        </ul>
       </Wrapper>
     </section>
   );
