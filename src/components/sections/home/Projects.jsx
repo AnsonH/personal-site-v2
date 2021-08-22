@@ -66,7 +66,7 @@ const Description = styled.div`
 `;
 
 const TechList = styled.ul`
-  margin: 3.5rem 0 2.5rem;
+  margin: 3.5rem 0;
   display: flex;
   font-family: "Ubuntu Mono", var(--font-mono-system);
   font-size: 1.5rem;

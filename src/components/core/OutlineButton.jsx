@@ -7,7 +7,6 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   padding: 1.2rem 1.5rem;
-  margin: 1rem 0;
   border: 1px solid ${(props) => props.color};
   border-radius: 0.5rem;
   color: ${(props) => props.color};

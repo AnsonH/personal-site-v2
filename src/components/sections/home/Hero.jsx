@@ -139,7 +139,7 @@ const Details = styled.div`
 `;
 
 const Description = styled.p`
-  margin: 4.5rem 0 3.5rem;
+  margin: 4.5rem 0;
   font-size: 1.5rem;
 
   @media ${bp.lg} {
