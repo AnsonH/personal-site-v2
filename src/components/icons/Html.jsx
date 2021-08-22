@@ -1,6 +1,8 @@
-function Html(props) {
+import PropTypes from "prop-types";
+
+function Html({ fontSize = 24 }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fontSize={fontSize} width="1em" height="1em">
       <path d="M97.7 430.3L63 40.4h381.9l-34.7 389.7-156.5 43.4" fill="#e44d26" />
       <path d="M253.9 440.3V72.4H410l-29.8 332.7" fill="#f16529" />
       <path
@@ -11,5 +13,9 @@ function Html(props) {
     </svg>
   );
 }
+
+Html.propTypes = {
+  fontSize: PropTypes.number,
+};
 
 export default Html;

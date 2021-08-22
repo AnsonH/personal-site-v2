@@ -92,8 +92,7 @@ const Skills = styled.div`
 `;
 
 const skillIconProps = {
-  width: "2.5rem", // For custom icons in src/components/icons
-  fontSize: 25, // For React Icons
+  fontSize: 25,
   "aria-hidden": true,
 };
 

@@ -1,6 +1,8 @@
-function Gatsby(props) {
+import PropTypes from "prop-types";
+
+function Gatsby({ fontSize }) {
   return (
-    <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" fontSize={fontSize} width="1em" height="1em">
       <path
         className="prefix__st0"
         d="M23.835 14h-6.259v1.788h4.292c-.626 2.682-2.593 4.918-5.186 5.812L6.4 11.318c1.073-3.13 4.113-5.365 7.6-5.365 2.682 0 5.096 1.342 6.616 3.398l1.341-1.162C20.17 5.775 17.308 4.165 14 4.165c-4.65 0-8.583 3.308-9.566 7.69l11.801 11.801c4.292-1.073 7.6-5.007 7.6-9.656zm-19.67.09c0 2.503.984 4.917 2.861 6.794s4.381 2.861 6.795 2.861z"
@@ -14,4 +16,7 @@ function Gatsby(props) {
   );
 }
 
+Gatsby.propTypes = {
+  fontSize: PropTypes.number,
+};
 export default Gatsby;
