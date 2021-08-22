@@ -43,11 +43,11 @@ module.exports = {
   // Config for ScrollReveal, a library for animating elements as they scroll into view
   // https://scrollrevealjs.org/api/reveal.html
   srConfig: {
-    panFromLeft: {
-      delay: 100,
-      distance: "10px",
-      origin: "left",
-    },
+    panFrom: (direction, delay = 200, distance = "10px") => ({
+      delay: delay,
+      distance: distance,
+      origin: direction,
+    }),
     popUp: {
       delay: 200,
       scale: 0.92,

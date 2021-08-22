@@ -11,9 +11,10 @@ const StyledButton = styled.button`
   border: 1px solid ${(props) => props.color};
   border-radius: 0.5rem;
   color: ${(props) => props.color};
-  font-family: "Ubuntu Mono", var(--font-mono-system);
-  font-size: 1.7rem;
-  font-weight: 700;
+  font-family: ${(props) =>
+    props.sansFont ? `"Ubuntu", var(--font-sans-system)` : `"Ubuntu Mono", var(--font-mono-system)`};
+  font-size: ${(props) => (props.sansFont ? `1.6rem` : `1.7rem`)};
+  font-weight: ${(props) => (props.sansFont ? `500` : `700`)};
   transition: background-color 150ms var(--easing);
 
   &:hover,
@@ -22,7 +23,7 @@ const StyledButton = styled.button`
   }
 
   @media ${bp.lg} {
-    font-size: 1.9rem;
+    font-size: ${(props) => (props.sansFont ? `1.6rem` : `1.9rem`)};
   }
 `;
 
@@ -31,7 +32,7 @@ const Icon = styled.span`
   margin-right: 1.2rem;
 `;
 
-function OutlineButton({ anchor, children, color, hoverColor, hrefLink, icon }) {
+function OutlineButton({ anchor, children, color, hoverColor, hrefLink, icon, sansFont }) {
   // Additional props if we cast the button into an anchor tag
   const anchorProps = anchor
     ? {
@@ -43,7 +44,7 @@ function OutlineButton({ anchor, children, color, hoverColor, hrefLink, icon }) 
     : {};
 
   return (
-    <StyledButton {...anchorProps} color={color} hoverColor={hoverColor}>
+    <StyledButton {...anchorProps} color={color} hoverColor={hoverColor} sansFont={sansFont}>
       {icon && <Icon aria-hidden>{icon}</Icon>}
       <span>{children}</span>
     </StyledButton>
@@ -57,6 +58,7 @@ OutlineButton.propTypes = {
   hoverColor: PropTypes.string,
   hrefLink: PropTypes.string,
   icon: PropTypes.node,
+  sansFont: PropTypes.bool,
 };
 
 OutlineButton.defaultProps = {
@@ -66,6 +68,7 @@ OutlineButton.defaultProps = {
   hoverColor: "var(--light-gray-hover)",
   hrefLink: null,
   icon: null,
+  sansFont: false,
 };
 
 export default OutlineButton;

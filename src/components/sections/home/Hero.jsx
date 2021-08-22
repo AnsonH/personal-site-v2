@@ -181,7 +181,7 @@ function Hero() {
 
   useEffect(() => {
     if (!prefersReducedMotion && showDetails) {
-      ScrollReveal().reveal(detailsRef.current, srConfig.panFromLeft);
+      ScrollReveal().reveal(detailsRef.current, srConfig.panFrom("left"));
     }
   }, [showDetails]);
 
@@ -199,7 +199,7 @@ function Hero() {
                 ) : (
                   <Typist
                     {...reactTypistConfig}
-                    startDelay={450}
+                    startDelay={250}
                     onTypingDone={() => setTimeout(() => setShowSecondTitle(true), 300)}
                   >
                     Hi, I&apos;m Anson<WavingHand>👋</WavingHand>
@@ -218,11 +218,7 @@ function Hero() {
                 {prefersReducedMotion ? (
                   <span>I&apos;m a front-end web developer.</span>
                 ) : (
-                  <Typist
-                    {...reactTypistConfig}
-                    startDelay={1700}
-                    onTypingDone={() => setTimeout(() => setShowDetails(true), 50)}
-                  >
+                  <Typist {...reactTypistConfig} startDelay={1500} onTypingDone={() => setShowDetails(true)}>
                     I&apos;m a front-end web developer.
                   </Typist>
                 )}
