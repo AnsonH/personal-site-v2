@@ -1,8 +1,9 @@
 import { ThemeProvider } from "styled-components";
 import PropTypes from "prop-types";
 import { theme, GlobalStyle } from "../../styles";
-import SEO from "../SEO";
+import Footer from "./Footer";
 import Header from "./Header";
+import SEO from "../SEO";
 
 function Layout({ children }) {
   return (
@@ -14,8 +15,8 @@ function Layout({ children }) {
           <GlobalStyle />
 
           <Header />
-
           <div id="content">{children}</div>
+          <Footer />
         </ThemeProvider>
       </div>
     </>

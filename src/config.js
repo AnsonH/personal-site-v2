@@ -2,10 +2,11 @@
 
 module.exports = {
   email: "ansonheung2000@gmail.com",
+  repoLink: "https://github.com/AnsonH/personal-site-v2",
   resumeUrl: "https://bit.ly/3uc5UAD",
 
   themeColor: {
-    darkCyan: "#21555B",
+    darkCyan: "#21555b",
     black: "#1f2122",
   },
 
@@ -25,6 +26,24 @@ module.exports = {
     {
       label: "Contact",
       url: "/#contact",
+    },
+  ],
+
+  socialLinks: [
+    {
+      title: "GitHub",
+      hoverColor: "#2b3137",
+      url: "https://github.com/AnsonH",
+    },
+    {
+      title: "Stack Overflow",
+      hoverColor: "#f48024",
+      url: "https://stackoverflow.com/users/11067496/ansonh",
+    },
+    {
+      title: "LinkedIn",
+      hoverColor: "#0077b5",
+      url: "https://www.linkedin.com/in/anson-heung-6b1457197/",
     },
   ],
 

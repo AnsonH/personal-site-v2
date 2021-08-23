@@ -1,8 +1,10 @@
 import { keyframes } from "styled-components";
 
 const animations = {
-  // Hand wave animation (on hover) in Hero section of home page
-  // Credits: https://codepen.io/jakejarvis/pen/pBZWZw
+  /**
+   * Hand wave animation (on hover) in Hero section of home page
+   * @see {@link https://codepen.io/jakejarvis/pen/pBZWZw Credits }
+   */
   heroWavingHand: keyframes`
     0% {
       transform: rotate(0deg);
@@ -27,6 +29,21 @@ const animations = {
     }
     100% {
       transform: rotate(0deg);
+    }
+  `,
+
+  /**
+   * Chevron animation for <ScrollToTop /> component
+   */
+  bounceUp: keyframes`
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.4rem);
+    }
+    100% {
+      transform: translateY(0);
     }
   `,
 };
