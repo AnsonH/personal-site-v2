@@ -11,8 +11,7 @@ import { bp } from "../../../styles";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const ProjectItem = styled.li`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.mixins.flexAlignCenter};
   flex-direction: column;
 
   &:not(:last-child) {

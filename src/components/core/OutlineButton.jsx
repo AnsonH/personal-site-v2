@@ -5,8 +5,8 @@ import { bp } from "../../styles";
 
 const styles = (color, hoverColor, sansFont) => css`
   width: max-content; // Prevent button taking 100% width due to flex
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.mixins.flexAlignCenter};
+
   padding: 1.2rem 1.5rem;
   border: 1px solid ${color};
   border-radius: 0.5rem;

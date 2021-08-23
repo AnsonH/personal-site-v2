@@ -29,8 +29,8 @@ const alertTheme = {
 
 const AlertRoot = styled.div`
   padding: 1rem 1.2rem;
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.mixins.flexAlignCenter};
+
   border-left: 3px solid ${(props) => alertTheme[props.variant].border};
   border-radius: 0.5rem;
   background-color: ${(props) => alertTheme[props.variant].background};

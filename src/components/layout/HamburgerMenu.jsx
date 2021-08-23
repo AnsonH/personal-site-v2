@@ -7,8 +7,7 @@ import { navLinks } from "../../config";
 import { useOnClickOutside } from "../../hooks";
 
 const StyledMenu = styled.div`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.mixins.flexAlignCenter};
 
   @media ${bp.lg} {
     display: none;

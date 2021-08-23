@@ -9,9 +9,8 @@ import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
 
 const Content = styled.div`
-  display: flex;
+  ${({ theme }) => theme.mixins.flexAlignCenter};
   flex-direction: column;
-  align-items: center;
 `;
 
 const Message = styled.p`
@@ -26,8 +25,8 @@ const Message = styled.p`
 const CopyMailButton = styled.button`
   margin-top: 2rem;
   padding: 0.5rem 0.8rem;
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.mixins.flexAlignCenter};
+
   color: var(--light-gray);
   transition: all 200ms var(--easing);
 

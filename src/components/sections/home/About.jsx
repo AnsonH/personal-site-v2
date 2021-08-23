@@ -12,9 +12,8 @@ import { Gatsby, Html, Python } from "../../icons";
 import { bp } from "../../../styles";
 
 const Content = styled.div`
-  display: flex;
+  ${({ theme }) => theme.mixins.flexAlignCenter};
   flex-direction: column;
-  align-items: center;
 
   @media ${bp.lg} {
     display: grid;
@@ -77,8 +76,7 @@ const Skills = styled.div`
   }
 
   li {
-    display: flex;
-    align-items: center;
+    ${({ theme }) => theme.mixins.flexAlignCenter};
 
     &:not(:last-child) {
       margin-bottom: 0.8rem;

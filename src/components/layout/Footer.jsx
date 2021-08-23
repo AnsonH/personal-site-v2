@@ -4,16 +4,16 @@ import { repoLink, socialLinks } from "../../config";
 import { ScrollToTop, Wrapper } from "../core";
 
 const FooterWrapper = styled(Wrapper)`
-  display: flex;
+  ${({ theme }) => theme.mixins.flexAlignCenter};
   flex-direction: column;
-  align-items: center;
+
   padding-top: 3rem;
   padding-bottom: 3rem;
 `;
 
 const SocialLinks = styled.ul`
   margin-bottom: 3rem;
-  ${({ theme }) => theme.mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexAlignCenter};
 
   li:not(:last-child) {
     margin-right: 1.5rem;

@@ -6,7 +6,8 @@ import { OutlineButton } from "../components/core";
 const Content = styled.div`
   min-height: calc(100vh - 5rem); // 5rem is height of <Header />
   padding-bottom: 5rem; // Offset 5rem for header height
-  ${({ theme }) => theme.mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexAlignCenter};
+  justify-content: center;
   flex-direction: column;
 `;
 

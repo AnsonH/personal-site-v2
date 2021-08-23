@@ -1,10 +1,9 @@
 import { css } from "styled-components";
 
 const mixins = {
-  flexCenter: css`
+  flexAlignCenter: css`
     display: flex;
     align-items: center;
-    justify-content: center;
   `,
 
   flexBetween: css`
