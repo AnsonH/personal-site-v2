@@ -1,8 +1,10 @@
 import { createGlobalStyle } from "styled-components";
+import transitions from "./transitions";
 import variables from "./variables";
 import { bp } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
+  ${transitions}
   ${variables}
 
   html {

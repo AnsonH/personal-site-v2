@@ -15,7 +15,14 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Disable better debugging in production to reduce file size
+        // https://styled-components.com/docs/tooling#better-debugging
+        displayName: process.env.NODE_ENV === "development" ? true : false,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
