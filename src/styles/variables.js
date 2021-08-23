@@ -9,9 +9,8 @@ const variables = css`
     --lime: #5fd700;
     --light-blue: #53d5e4;
     --light-blue-hover: rgba(83, 213, 228, 0.2);
-    --blue: #3a95a0;
-    --blue-hover: #3a96a080;
-    --cyan: #21555b;
+    --cyan: #226067;
+    --cyan-hover: #357b83;
     --dark-cyan: #354a52;
     --white: #ffffff;
     --light-gray: #c1c1c1;

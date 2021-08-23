@@ -26,7 +26,7 @@ const LogoAnchor = styled(Link)`
   transition: all 150ms var(--easing);
 
   &:hover {
-    background-color: var(--blue-hover);
+    background-color: var(--cyan-hover);
   }
 
   &:focus {
@@ -56,7 +56,7 @@ const StyledLinks = styled.div`
       transition: all 150ms var(--easing);
 
       &:hover {
-        background-color: var(--blue-hover);
+        background-color: var(--cyan-hover);
       }
 
       &:focus {

@@ -151,11 +151,16 @@ const CTA = styled.div`
   display: flex;
   flex-direction: column;
 
+  a:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
   @media (min-width: 560px) {
     flex-direction: row;
 
     a:not(:last-child) {
       margin-right: 4rem;
+      margin-bottom: 0;
     }
   }
 `;

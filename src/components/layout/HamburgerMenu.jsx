@@ -109,7 +109,7 @@ const StyledList = styled.ul`
 
     &:hover,
     &:focus {
-      background-color: var(--blue-hover);
+      background-color: var(--cyan-hover);
     }
   }
 `;
