@@ -77,7 +77,8 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.1;
   }
 
-  h2 {
+  // Add ⠿⠿⠿ symbols around h2 in home page
+  #home h2 {
     margin-top: 0;
     margin-bottom: 5rem;
     display: flex;

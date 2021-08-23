@@ -3,11 +3,13 @@ import { About, Contact, Experience, Hero, Layout, Projects } from "../component
 export default function Home() {
   return (
     <Layout>
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Contact />
+      <div id="home">
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
+      </div>
     </Layout>
   );
 }
