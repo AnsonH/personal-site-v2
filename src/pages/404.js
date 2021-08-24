@@ -1,7 +1,11 @@
+import { useEffect, useRef } from "react";
 import { MdHome } from "react-icons/md";
+import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
+import { srConfig } from "../config";
 import { Layout } from "../components";
 import { OutlineButton } from "../components/core";
+import { usePrefersReducedMotion } from "../hooks";
 
 const Content = styled.div`
   min-height: calc(100vh - 5rem); // 5rem is height of <Header />
@@ -9,6 +13,11 @@ const Content = styled.div`
   ${({ theme }) => theme.mixins.flexAlignCenter};
   justify-content: center;
   flex-direction: column;
+  visibility: hidden;
+
+  @media (prefers-reduced-motion) {
+    visibility: visible;
+  }
 `;
 
 const StyledH1 = styled.h1`
@@ -35,9 +44,18 @@ const Subtitle = styled.p`
 `;
 
 function NotFoundPage() {
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const contentRef = useRef();
+
+  useEffect(() => {
+    if (!prefersReducedMotion) {
+      ScrollReveal().reveal(contentRef.current, srConfig.popUp);
+    }
+  }, []);
+
   return (
     <Layout>
-      <Content>
+      <Content ref={contentRef}>
         <StyledH1>404</StyledH1>
         <StyledH2>Page not found</StyledH2>
         <Subtitle>The page you&apos;re looking for does not exist &#x1F641;</Subtitle>
@@ -48,7 +66,7 @@ function NotFoundPage() {
           hoverColor="var(--light-blue-hover)"
           icon={<MdHome fontSize={24} />}
         >
-          Go Home
+          Take Me Home
         </OutlineButton>
       </Content>
     </Layout>
