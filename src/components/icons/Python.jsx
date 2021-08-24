@@ -2,7 +2,14 @@ import PropTypes from "prop-types";
 
 function Python({ fontSize }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 255" fontSize={fontSize} width="1em" height="1em">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 256 255"
+      fontSize={fontSize}
+      width="1em"
+      height="1em"
+      aria-hidden
+    >
       <linearGradient
         id="prefix__a"
         gradientUnits="userSpaceOnUse"
