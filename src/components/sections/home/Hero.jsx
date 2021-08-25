@@ -200,14 +200,22 @@ function Hero() {
               <StyledChevron aria-hidden />
               <Title aria-label="Hi, I'm Anson">
                 {prefersReducedMotion ? (
-                  <span>Hi, I&apos;m Anson👋</span>
+                  <span>
+                    Hi, I&apos;m Anson
+                    <span role="img" aria-label="waving hand">
+                      👋
+                    </span>
+                  </span>
                 ) : (
                   <Typist
                     {...reactTypistConfig}
                     startDelay={250}
                     onTypingDone={() => setTimeout(() => setShowSecondTitle(true), 300)}
                   >
-                    Hi, I&apos;m Anson<WavingHand>👋</WavingHand>
+                    Hi, I&apos;m Anson
+                    <WavingHand role="img" aria-label="waving hand">
+                      👋
+                    </WavingHand>
                   </Typist>
                 )}
               </Title>
