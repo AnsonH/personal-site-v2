@@ -13,7 +13,7 @@ function SEO({ title, description, image, article }) {
           defaultDescription: description
           defaultImage: og
           defaultTitle: title
-          siteUrl: url
+          siteUrl
         }
       }
     }
@@ -41,6 +41,11 @@ function SEO({ title, description, image, article }) {
       <meta property="og:image" content={seo.image} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:type" content={article ? "article" : "website"} />
+
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:card" content="summary_large_image" />
     </Helmet>
   );
 }

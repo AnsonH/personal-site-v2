@@ -11,21 +11,13 @@ module.exports = {
     title: "Anson Heung | Front-end Developer",
     description: "A front-end web developer focused on building websites with stunning interfaces and experiences.",
     og: "./og.png", // Open Graph image preview (path relative to `static/` folder)
-    url: "https://www.ansonheung.me", // No trailing slash allowed
+    siteUrl: "https://www.ansonheung.me", // No trailing slash allowed
   },
   plugins: [
+    /* SEO */
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Disable better debugging in production to reduce file size
-        // https://styled-components.com/docs/tooling#better-debugging
-        displayName: process.env.NODE_ENV === "development" ? true : false,
-      },
-    },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -39,6 +31,16 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+
+    /* Styling */
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Disable better debugging in production to reduce file size
+        // https://styled-components.com/docs/tooling#better-debugging
+        displayName: process.env.NODE_ENV === "development" ? true : false,
+      },
+    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -46,6 +48,13 @@ module.exports = {
         display: "swap", // Show fallback font before Google Font is fetched
       },
     },
+
+    /* Image Optimization */
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+
+    /* Source filesystem */
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -60,6 +69,8 @@ module.exports = {
         path: `${__dirname}/content/`,
       },
     },
+
+    /* Transformer remark (transform markdown) */
     {
       resolve: `gatsby-transformer-remark`,
       options: {
