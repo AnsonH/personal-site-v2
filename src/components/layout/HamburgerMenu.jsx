@@ -110,12 +110,21 @@ function HamburgerMenu() {
     }
   };
 
+  // Close mobile menu if viewport width >= lg
+  const handleResize = () => {
+    if (window.innerWidth >= 768.02) {
+      setIsOpen(false);
+    }
+  };
+
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("resize", handleResize);
     setFocusables(); // Populate `menuFocusables` array
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
