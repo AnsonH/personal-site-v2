@@ -50,9 +50,13 @@ const StyledList = styled.ul`
     color: var(--white);
     transition: background-color 150ms var(--easing);
 
-    &:hover,
+    &:hover {
+      background-color: var(--cyan-hover);
+    }
+
     &:focus {
       background-color: var(--cyan-hover);
+      ${({ theme }) => theme.mixins.dashedOutline};
     }
   }
 `;
