@@ -10,7 +10,7 @@ module.exports = {
   siteMetadata: {
     title: "Anson Heung | Front-end Developer",
     description: "A front-end web developer focused on building websites with stunning interfaces and experiences.",
-    og: "./og.png", // Open Graph image preview (path relative to `static/` folder)
+    og: "/og.png", // Social media image preview (in `static/` folder, don't add "." at front)
     siteUrl: "https://www.ansonheung.me", // No trailing slash allowed
   },
   plugins: [
