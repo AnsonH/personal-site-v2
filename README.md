@@ -1,8 +1,8 @@
 <h1 align="center">Personal Website v2</h1>
 
-<p align="center">Second iteration of my personal website, built with <a href="https://www.gatsbyjs.com/">Gatsby</a> and hosted on <a href="https://www.netlify.com/">Netlify</a>.</p>
+<p align="center">My personal website, built with <a href="https://www.gatsbyjs.com/">Gatsby</a> and hosted on <a href="https://www.netlify.com/">Netlify</a>.</p>
 
-<p align="center">Link: <a href="https://www.ansonheung.me">https://www.ansonheung.me</a></p>
+<p align="center">Visit here: <a href="https://www.ansonheung.me">https://www.ansonheung.me</a></p>
 
 <div align="center">
   <a href="https://app.netlify.com/sites/anson-heung/deploys">

@@ -47,11 +47,11 @@ const ViewSourceLink = styled.a`
 const getSocialIcon = (title) => {
   switch (title) {
     case "GitHub":
-      return <IoLogoGithub />;
+      return <IoLogoGithub aria-hidden />;
     case "Stack Overflow":
-      return <IoLogoStackoverflow />;
+      return <IoLogoStackoverflow aria-hidden />;
     case "LinkedIn":
-      return <IoLogoLinkedin />;
+      return <IoLogoLinkedin aria-hidden />;
     default:
       return null;
   }
@@ -69,7 +69,7 @@ function Footer() {
                 hoverColor={item.hoverColor}
                 rel="noreferrer"
                 target="_blank"
-                title={item.title}
+                aria-label={item.title}
               >
                 {getSocialIcon(item.title)}
               </SocialLink>
