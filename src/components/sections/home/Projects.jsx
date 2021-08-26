@@ -65,7 +65,7 @@ const Description = styled.div`
 `;
 
 const TechList = styled.ul`
-  margin: 3.5rem 0;
+  margin: 4.5rem 0 3rem;
   display: flex;
   font-family: "Ubuntu Mono", var(--font-mono-system);
   font-size: 1.5rem;
@@ -93,7 +93,7 @@ function Projects() {
     query Projects {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/projects/" } }
-        sort: { fields: frontmatter___date, order: DESC }
+        sort: { fields: frontmatter___order, order: ASC }
       ) {
         nodes {
           html
