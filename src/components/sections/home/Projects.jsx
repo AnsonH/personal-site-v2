@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { IoLogoGithub } from "react-icons/io";
 import { MdOpenInNew } from "react-icons/md";
 import ScrollReveal from "scrollreveal";
@@ -8,7 +9,6 @@ import { srConfig } from "../../../config";
 import { OutlineButton, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const ProjectItem = styled.li`
   ${({ theme }) => theme.mixins.flexAlignCenter};
