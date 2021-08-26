@@ -1,21 +1,24 @@
 {
   "name": "personal-site-v2",
-  "private": true,
   "description": "Anson Heung's Personal Website v2",
-  "version": "0.1.0",
-  "license": "0BSD",
+  "version": "1.0.0",
+  "author": "Anson Heung <ansonheung2000@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnsonH/personal-site-v2"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
-    "gatsby": "^3.10.2",
+    "gatsby": "3.12.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^1.12.0",
     "gatsby-plugin-manifest": "^3.11.0",
