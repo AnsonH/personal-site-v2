@@ -14,12 +14,13 @@ function SEO({ title, description, image, article }) {
           defaultImage: og
           defaultTitle: title
           siteUrl
+          twitterUsername
         }
       }
     }
   `);
 
-  const { defaultDescription, defaultImage, defaultTitle, siteUrl } = data.site.siteMetadata;
+  const { defaultDescription, defaultImage, defaultTitle, siteUrl, twitterUsername } = data.site.siteMetadata;
 
   const { pathname } = useLocation();
 
@@ -46,6 +47,7 @@ function SEO({ title, description, image, article }) {
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={twitterUsername} />
     </Helmet>
   );
 }

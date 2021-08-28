@@ -1,4 +1,4 @@
-import { IoLogoGithub, IoLogoLinkedin, IoLogoStackoverflow } from "react-icons/io5";
+import { IoLogoGithub, IoLogoLinkedin, IoLogoStackoverflow, IoLogoTwitter } from "react-icons/io5";
 import styled from "styled-components";
 import { repoLink, socialLinks } from "../../config";
 import { ScrollToTop, Wrapper } from "../core";
@@ -48,6 +48,8 @@ const getSocialIcon = (title) => {
   switch (title) {
     case "GitHub":
       return <IoLogoGithub aria-hidden />;
+    case "Twitter":
+      return <IoLogoTwitter aria-hidden />;
     case "Stack Overflow":
       return <IoLogoStackoverflow aria-hidden />;
     case "LinkedIn":
