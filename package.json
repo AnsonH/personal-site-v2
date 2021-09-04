@@ -11,10 +11,12 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "format": "prettier --write **/*.{js,jsx,ts,tsx,json,md}",
+    "lint": "eslint ./src/**/*.{js,jsx} --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
@@ -46,6 +48,21 @@
     "babel-preset-gatsby": "^1.11.0",
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.24.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "prettier": "2.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,md}": [
+      "npm run format"
+    ],
+    "**/*.{js,jsx}": [
+      "npm run lint"
+    ]
   }
 }

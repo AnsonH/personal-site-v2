@@ -24,6 +24,7 @@ cd personal-site-v2/
 
 # 3. Install dependencies
 yarn
+yarn prepare
 
 # 4. Start the development server
 gatsby develop
