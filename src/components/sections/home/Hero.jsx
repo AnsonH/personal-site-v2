@@ -213,6 +213,7 @@ function Hero() {
                     onTypingDone={() => setTimeout(() => setShowSecondTitle(true), 300)}
                   >
                     Hi, I&apos;m Anson
+                    {/* eslint-disable-next-line */}
                     <WavingHand role="img" aria-label="waving hand">
                       👋
                     </WavingHand>

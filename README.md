@@ -25,7 +25,11 @@ cd personal-site-v2/
 # 3. Install dependencies
 yarn
 
-# 4. Start the development server
+# 4. Enable Git Hooks via Husky, such that ESLint and Prettier will process
+# staged files whenever you make a commit
+yarn prepare
+
+# 5. Start the development server
 gatsby develop
 ```
 
