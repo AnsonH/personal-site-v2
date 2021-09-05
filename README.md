@@ -24,7 +24,6 @@ cd personal-site-v2/
 
 # 3. Install dependencies
 yarn
-yarn prepare
 
 # 4. Enable Git Hooks via Husky, such that ESLint and Prettier will process
 # staged files whenever you make a commit
