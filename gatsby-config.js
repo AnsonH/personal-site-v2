@@ -15,7 +15,7 @@ module.exports = {
     twitterUsername: "@AnsonH_",
   },
   plugins: [
-    /* SEO */
+    /* SEO  */
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sitemap`,
@@ -90,6 +90,14 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+
+    /* Analytics */
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-BCV9HGHJVL"],
       },
     },
   ],
