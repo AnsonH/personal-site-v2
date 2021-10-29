@@ -1,6 +1,6 @@
 ---
 date: "2021-02"
-order: 2
+order: 3
 title: "Easybank Landing Page"
 github: "https://github.com/AnsonH/easybank-landing-page"
 demo: "https://ansonh.github.io/easybank-landing-page/"

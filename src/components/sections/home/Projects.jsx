@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { IoLogoGithub } from "react-icons/io";
 import { MdOpenInNew } from "react-icons/md";
+import { RiNpmjsFill } from "react-icons/ri";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { srConfig } from "../../../config";
@@ -100,6 +101,7 @@ function Projects() {
           frontmatter {
             demo
             github
+            npm
             tech
             title
             thumbnail {
@@ -136,7 +138,7 @@ function Projects() {
         <h2 ref={titleRef}>Projects</h2>
         <ul>
           {projects.map((project, index) => {
-            const { demo, github, tech, title, thumbnail } = project.frontmatter;
+            const { demo, github, npm, tech, title, thumbnail } = project.frontmatter;
 
             return (
               <ProjectItem key={index} ref={(element) => projectItemsRef.current.push(element)}>
@@ -153,12 +155,21 @@ function Projects() {
                     ))}
                   </TechList>
                   <LinksWrapper>
-                    <OutlineButton anchor hrefLink={github} icon={<IoLogoGithub fontSize={24} />} sansFont>
-                      Source
-                    </OutlineButton>
-                    <OutlineButton anchor hrefLink={demo} icon={<MdOpenInNew fontSize={24} />} sansFont>
-                      Demo
-                    </OutlineButton>
+                    {github ? (
+                      <OutlineButton anchor hrefLink={github} icon={<IoLogoGithub fontSize={24} />} sansFont>
+                        Source
+                      </OutlineButton>
+                    ) : null}
+                    {demo ? (
+                      <OutlineButton anchor hrefLink={demo} icon={<MdOpenInNew fontSize={24} />} sansFont>
+                        Demo
+                      </OutlineButton>
+                    ) : null}
+                    {npm ? (
+                      <OutlineButton anchor hrefLink={npm} icon={<RiNpmjsFill fontSize={24} />} sansFont>
+                        NPM
+                      </OutlineButton>
+                    ) : null}
                   </LinksWrapper>
                 </ProjectInfo>
               </ProjectItem>

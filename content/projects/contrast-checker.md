@@ -1,6 +1,6 @@
 ---
 date: "2021-06"
-order: 1
+order: 2
 title: "Color Contrast Checker"
 github: "https://github.com/AnsonH/contrast-checker"
 demo: "https://color-contrast.netlify.app/"
