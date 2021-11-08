@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
 import { FaChevronRight } from "react-icons/fa";
 import { MdMailOutline } from "react-icons/md";
 import { IoDocumentTextSharp } from "react-icons/io5";
 import Typist from "react-typist";
 import ScrollReveal from "scrollreveal";
+import styled from "styled-components";
 import { OutlineButton, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
@@ -165,13 +165,11 @@ const CTA = styled.div`
   }
 `;
 
-const isRenderingOnServer = typeof window === "undefined";
-
 function Hero() {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const [showFirstTitle, setShowFirstTitle] = useState(false);
-  const [showSecondTitle, setShowSecondTitle] = useState(prefersReducedMotion);
+  const [showSecondTitle, setShowSecondTitle] = useState(false);
   const [showDetails, setShowDetails] = useState(prefersReducedMotion);
 
   const detailsRef = useRef();
@@ -182,6 +180,11 @@ function Hero() {
   // after the browser downloads the JS bundle.
   useEffect(() => {
     setShowFirstTitle(true);
+
+    // Immediately show 2nd title if user prefers reduced motion
+    if (prefersReducedMotion) {
+      setShowSecondTitle(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -222,11 +225,7 @@ function Hero() {
               </Title>
             </TitleContainer>
 
-            {/* If we simply set `visible={showSecondTitle}`, the title would somehow be visible immediately
-             * on page load in the production build but not in development build. To fix this, we force this prop
-             * to be `false` if we're building for production (i.e., rendering on server)
-             */}
-            <TitleContainer visible={isRenderingOnServer ? false : showSecondTitle}>
+            <TitleContainer visible={showSecondTitle}>
               <StyledChevron aria-hidden />
               <Title aria-label="I'm a front-end web developer.">
                 {prefersReducedMotion ? (
