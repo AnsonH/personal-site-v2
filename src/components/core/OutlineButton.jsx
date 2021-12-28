@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 import { bp } from "../../styles";
@@ -30,7 +30,7 @@ const StyledButton = styled.button`
   ${(props) => styles(props.color, props.hoverColor, props.sansFont)}
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(OutboundLink)`
   ${(props) => styles(props.color, props.hoverColor, props.sansFont)}
 `;
 
@@ -40,17 +40,13 @@ const Icon = styled.span`
 `;
 
 // `anchor`: Set to true to turn the button into an anchor tag to an external link
-// `link`: Set to true to turn the button to <Link /> component
-function OutlineButton({ anchor, link, children, color, hoverColor, hrefLink, icon, sansFont, targetBlank, to }) {
+function OutlineButton({ anchor, children, color, hoverColor, hrefLink, icon, sansFont, targetBlank }) {
   // Additional props if we cast the button into an external anchor tag
-  const anchorProps = anchor
-    ? {
-        as: "a",
-        href: hrefLink,
-        target: targetBlank ? "_blank" : "_self",
-        rel: "noreferrer",
-      }
-    : {};
+  const anchorProps = {
+    href: hrefLink,
+    target: targetBlank ? "_blank" : "_self",
+    rel: "noreferrer",
+  };
 
   const content = (
     <>
@@ -59,12 +55,12 @@ function OutlineButton({ anchor, link, children, color, hoverColor, hrefLink, ic
     </>
   );
 
-  return link ? (
-    <StyledLink to={to} color={color} hoverColor={hoverColor} sansFont={sansFont}>
+  return anchor ? (
+    <StyledLink {...anchorProps} color={color} hoverColor={hoverColor} sansFont={sansFont}>
       {content}
     </StyledLink>
   ) : (
-    <StyledButton {...anchorProps} color={color} hoverColor={hoverColor} sansFont={sansFont}>
+    <StyledButton color={color} hoverColor={hoverColor} sansFont={sansFont}>
       {content}
     </StyledButton>
   );
@@ -72,7 +68,6 @@ function OutlineButton({ anchor, link, children, color, hoverColor, hrefLink, ic
 
 OutlineButton.propTypes = {
   anchor: PropTypes.bool,
-  link: PropTypes.bool,
   children: PropTypes.string,
   color: PropTypes.string,
   hoverColor: PropTypes.string,
@@ -80,12 +75,10 @@ OutlineButton.propTypes = {
   icon: PropTypes.node,
   sansFont: PropTypes.bool,
   targetBlank: PropTypes.bool,
-  to: PropTypes.string,
 };
 
 OutlineButton.defaultProps = {
   anchor: false,
-  link: false,
   children: "",
   color: "var(--light-gray)",
   hoverColor: "var(--light-gray-hover)",
@@ -93,7 +86,6 @@ OutlineButton.defaultProps = {
   icon: null,
   sansFont: false,
   targetBlank: true,
-  to: null,
 };
 
 export default OutlineButton;

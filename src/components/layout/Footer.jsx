@@ -1,3 +1,4 @@
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoStackoverflow, IoLogoTwitter } from "react-icons/io5";
 import { FaDev } from "react-icons/fa";
 import styled from "styled-components";
@@ -21,7 +22,7 @@ const SocialLinks = styled.ul`
   }
 `;
 
-const SocialLink = styled.a`
+const SocialLink = styled(OutboundLink)`
   padding: 1.2rem;
   display: flex;
   border-radius: 4px;
