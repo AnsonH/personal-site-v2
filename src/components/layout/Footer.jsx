@@ -1,4 +1,5 @@
 import { IoLogoGithub, IoLogoLinkedin, IoLogoStackoverflow, IoLogoTwitter } from "react-icons/io5";
+import { FaDev } from "react-icons/fa";
 import styled from "styled-components";
 import { repoLink, socialLinks } from "../../config";
 import { ScrollToTop, Wrapper } from "../core";
@@ -23,6 +24,7 @@ const SocialLinks = styled.ul`
 const SocialLink = styled.a`
   padding: 1.2rem;
   display: flex;
+  border-radius: 4px;
   background-color: var(--dark-gray);
   color: var(--white);
   font-size: 2.2rem; // Icon size
@@ -52,6 +54,8 @@ const getSocialIcon = (title) => {
       return <IoLogoTwitter aria-hidden />;
     case "Stack Overflow":
       return <IoLogoStackoverflow aria-hidden />;
+    case "DEV Community":
+      return <FaDev aria-hidden />;
     case "LinkedIn":
       return <IoLogoLinkedin aria-hidden />;
     default:

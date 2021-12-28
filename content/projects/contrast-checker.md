@@ -6,7 +6,7 @@ github: "https://github.com/AnsonH/contrast-checker"
 demo: "https://color-contrast.netlify.app/"
 thumbnail: "./images/contrast-checker.png"
 tech:
-  - React
+  - React TypeScript
   - Styled Components
 ---
 

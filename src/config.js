@@ -46,6 +46,11 @@ module.exports = {
       url: "https://stackoverflow.com/users/11067496/ansonh",
     },
     {
+      title: "DEV Community",
+      hoverColor: "#000000",
+      url: "https://dev.to/ansonh",
+    },
+    {
       title: "LinkedIn",
       hoverColor: "#0077b5",
       url: "https://www.linkedin.com/in/anson-heung-6b1457197/",

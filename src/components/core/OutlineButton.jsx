@@ -41,13 +41,13 @@ const Icon = styled.span`
 
 // `anchor`: Set to true to turn the button into an anchor tag to an external link
 // `link`: Set to true to turn the button to <Link /> component
-function OutlineButton({ anchor, link, children, color, hoverColor, hrefLink, icon, sansFont, to }) {
+function OutlineButton({ anchor, link, children, color, hoverColor, hrefLink, icon, sansFont, targetBlank, to }) {
   // Additional props if we cast the button into an external anchor tag
   const anchorProps = anchor
     ? {
         as: "a",
         href: hrefLink,
-        target: "_blank",
+        target: targetBlank ? "_blank" : "_self",
         rel: "noreferrer",
       }
     : {};
@@ -79,6 +79,7 @@ OutlineButton.propTypes = {
   hrefLink: PropTypes.string,
   icon: PropTypes.node,
   sansFont: PropTypes.bool,
+  targetBlank: PropTypes.bool,
   to: PropTypes.string,
 };
 
@@ -91,6 +92,7 @@ OutlineButton.defaultProps = {
   hrefLink: null,
   icon: null,
   sansFont: false,
+  targetBlank: true,
   to: null,
 };
 

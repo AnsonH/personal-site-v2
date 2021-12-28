@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa";
-import { MdMailOutline } from "react-icons/md";
+import { MdDesktopMac } from "react-icons/md";
 import { IoDocumentTextSharp } from "react-icons/io5";
 import Typist from "react-typist";
 import ScrollReveal from "scrollreveal";
@@ -8,7 +8,7 @@ import styled from "styled-components";
 import { OutlineButton, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
-import { email, resumeUrl, reactTypistConfig, srConfig } from "../../../config";
+import { resumeUrl, reactTypistConfig, srConfig } from "../../../config";
 
 const StyledSection = styled.section`
   padding: 4rem 0;
@@ -248,10 +248,11 @@ function Hero() {
                   anchor
                   color="var(--orange)"
                   hoverColor="var(--orange-hover)"
-                  hrefLink={`mailto:${email}`}
-                  icon={<MdMailOutline fontSize={24} />}
+                  hrefLink="#projects"
+                  icon={<MdDesktopMac fontSize={24} />}
+                  targetBlank={false}
                 >
-                  Get in Touch
+                  Projects
                 </OutlineButton>
                 <OutlineButton
                   anchor

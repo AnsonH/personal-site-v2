@@ -1,14 +1,14 @@
 import { useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { IoLogoJavascript, IoLogoReact, IoLogoSass } from "react-icons/io5";
-import { SiGit, SiLaravel, SiPhp } from "react-icons/si";
+import { IoLogoReact, IoLogoSass } from "react-icons/io5";
+import { SiGit, SiJavascript, SiLaravel, SiPhp, SiTypescript } from "react-icons/si";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { srConfig } from "../../../config";
 import { Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
-import { Gatsby, Html, Python } from "../../icons";
+import { Gatsby, Python } from "../../icons";
 import { bp } from "../../../styles";
 
 const Content = styled.div`
@@ -97,16 +97,16 @@ const skills = [
   // List 1
   [
     {
-      icon: <Html {...skillIconProps} />,
-      label: "HTML & CSS",
-    },
-    {
       icon: <IoLogoSass color="#CD6799" {...skillIconProps} />,
       label: "Sass",
     },
     {
-      icon: <IoLogoJavascript color="#F7DF1E" {...skillIconProps} />,
-      label: "Javascript (ES6+)",
+      icon: <SiJavascript color="#F7DF1E" {...skillIconProps} />,
+      label: "JavaScript (ES6+)",
+    },
+    {
+      icon: <SiTypescript color="#3178c6" {...skillIconProps} />,
+      label: "TypeScript",
     },
   ],
   // List 2
@@ -168,7 +168,6 @@ function About() {
           <ImageWrapper>
             <StaticImage src="../../../images/me.png" alt="Photo of me" />
           </ImageWrapper>
-
           <Description>
             <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
             <Skills>
