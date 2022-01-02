@@ -60,8 +60,8 @@ function NotFoundPage() {
         <StyledH2>Page not found</StyledH2>
         <Subtitle>The page you&apos;re looking for does not exist &#x1F641;</Subtitle>
         <OutlineButton
-          link
-          to="/"
+          type="link"
+          hrefLink="/"
           color="var(--light-blue)"
           hoverColor="var(--light-blue-hover)"
           icon={<MdHome fontSize={24} />}

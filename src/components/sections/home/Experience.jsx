@@ -144,7 +144,7 @@ function Experience() {
         <ResumeWrapper>
           <p>Interested in my full resume?</p>
           <OutlineButton
-            anchor
+            type="anchor"
             color="var(--light-blue)"
             hoverColor="var(--light-blue-hover)"
             hrefLink={resumeUrl}

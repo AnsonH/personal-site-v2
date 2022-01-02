@@ -156,17 +156,17 @@ function Projects() {
                   </TechList>
                   <LinksWrapper>
                     {github ? (
-                      <OutlineButton anchor hrefLink={github} icon={<IoLogoGithub fontSize={24} />} sansFont>
+                      <OutlineButton type="anchor" hrefLink={github} icon={<IoLogoGithub fontSize={24} />} sansFont>
                         Source
                       </OutlineButton>
                     ) : null}
                     {demo ? (
-                      <OutlineButton anchor hrefLink={demo} icon={<MdOpenInNew fontSize={24} />} sansFont>
+                      <OutlineButton type="anchor" hrefLink={demo} icon={<MdOpenInNew fontSize={24} />} sansFont>
                         Demo
                       </OutlineButton>
                     ) : null}
                     {npm ? (
-                      <OutlineButton anchor hrefLink={npm} icon={<RiNpmjsFill fontSize={24} />} sansFont>
+                      <OutlineButton type="anchor" hrefLink={npm} icon={<RiNpmjsFill fontSize={24} />} sansFont>
                         NPM
                       </OutlineButton>
                     ) : null}

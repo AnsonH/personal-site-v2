@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
@@ -30,7 +31,11 @@ const StyledButton = styled.button`
   ${(props) => styles(props.color, props.hoverColor, props.sansFont)}
 `;
 
-const StyledLink = styled(OutboundLink)`
+const StyledAnchor = styled(OutboundLink)`
+  ${(props) => styles(props.color, props.hoverColor, props.sansFont)}
+`;
+
+const StyledLink = styled(Link)`
   ${(props) => styles(props.color, props.hoverColor, props.sansFont)}
 `;
 
@@ -39,8 +44,11 @@ const Icon = styled.span`
   margin-right: 1.2rem;
 `;
 
-// `anchor`: Set to true to turn the button into an anchor tag to an external link
-function OutlineButton({ anchor, children, color, hoverColor, hrefLink, icon, sansFont, targetBlank }) {
+// `type` prop can be one of: "button", "anchor", "link"
+// "button": Render <button>
+// "anchor": Render <a>
+// "link": Render <Link />
+function OutlineButton({ type, children, color, hoverColor, hrefLink, icon, sansFont, targetBlank }) {
   // Additional props if we cast the button into an external anchor tag
   const anchorProps = {
     href: hrefLink,
@@ -55,19 +63,32 @@ function OutlineButton({ anchor, children, color, hoverColor, hrefLink, icon, sa
     </>
   );
 
-  return anchor ? (
-    <StyledLink {...anchorProps} color={color} hoverColor={hoverColor} sansFont={sansFont}>
-      {content}
-    </StyledLink>
-  ) : (
-    <StyledButton color={color} hoverColor={hoverColor} sansFont={sansFont}>
-      {content}
-    </StyledButton>
-  );
+  switch (type) {
+    case "button":
+      return (
+        <StyledButton color={color} hoverColor={hoverColor} sansFont={sansFont}>
+          {content}
+        </StyledButton>
+      );
+    case "anchor":
+      return (
+        <StyledAnchor {...anchorProps} color={color} hoverColor={hoverColor} sansFont={sansFont}>
+          {content}
+        </StyledAnchor>
+      );
+    case "link":
+      return (
+        <StyledLink to={hrefLink} color={color} hoverColor={hoverColor} sansFont={sansFont}>
+          {content}
+        </StyledLink>
+      );
+    default:
+      throw new Error("`type` prop should be one of 'button', 'anchor', 'link'");
+  }
 }
 
 OutlineButton.propTypes = {
-  anchor: PropTypes.bool,
+  type: PropTypes.oneOf(["button", "anchor", "link"]).isRequired,
   children: PropTypes.string,
   color: PropTypes.string,
   hoverColor: PropTypes.string,
@@ -78,7 +99,7 @@ OutlineButton.propTypes = {
 };
 
 OutlineButton.defaultProps = {
-  anchor: false,
+  type: "button",
   children: "",
   color: "var(--light-gray)",
   hoverColor: "var(--light-gray-hover)",

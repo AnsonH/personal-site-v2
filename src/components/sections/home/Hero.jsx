@@ -245,7 +245,7 @@ function Hero() {
               </Description>
               <CTA>
                 <OutlineButton
-                  anchor
+                  type="anchor"
                   color="var(--orange)"
                   hoverColor="var(--orange-hover)"
                   hrefLink="#projects"
@@ -255,7 +255,7 @@ function Hero() {
                   Projects
                 </OutlineButton>
                 <OutlineButton
-                  anchor
+                  type="anchor"
                   color="var(--light-blue)"
                   hoverColor="var(--light-blue-hover)"
                   hrefLink={resumeUrl}

@@ -85,7 +85,7 @@ function Contact() {
           </Message>
 
           <OutlineButton
-            anchor
+            type="anchor"
             color="var(--orange)"
             hoverColor="var(--orange-hover)"
             hrefLink={`mailto:${email}`}
