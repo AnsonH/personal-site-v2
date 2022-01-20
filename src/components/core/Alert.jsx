@@ -32,7 +32,7 @@ const AlertRoot = styled.div`
   ${({ theme }) => theme.mixins.flexAlignCenter};
 
   border-left: 3px solid ${(props) => alertTheme[props.variant].border};
-  border-radius: 0.5rem;
+  border-radius: 5px;
   background-color: ${(props) => alertTheme[props.variant].background};
 `;
 

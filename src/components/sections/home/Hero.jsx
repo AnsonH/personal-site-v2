@@ -23,9 +23,9 @@ const StyledSection = styled.section`
 `;
 
 const Terminal = styled.div`
-  background-color: var(--black);
-  border: 0.2rem solid var(--gray);
-  border-radius: 1rem;
+  background-color: var(--bg0);
+  border: 0.2rem solid #777777;
+  border-radius: 10px;
 
   @media ${bp.lg} {
     margin: 0 9rem;

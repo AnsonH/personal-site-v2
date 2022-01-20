@@ -11,8 +11,8 @@ const SkipLink = styled.a`
   top: 6rem;
   left: -18rem;
   background-color: var(--light-blue);
-  border-radius: 0.5rem;
-  color: var(--black);
+  border-radius: 5px;
+  color: var(--bg0);
   font-size: 1.6rem;
   font-weight: 500;
   z-index: 999;

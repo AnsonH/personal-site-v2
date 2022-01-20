@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
   top: 0;
   box-shadow: 0 0.2rem 0.4rem 0 rgb(0 0 0 / 20%);
   background-color: var(--cyan);
-  color: var(--white);
+  color: var(--fg0);
   z-index: 999; // So that mobile menu & overlay is always on top
 `;
 
@@ -52,7 +52,7 @@ const StyledLinks = styled.div`
     a {
       display: inline-block;
       padding: 1.5rem 2rem;
-      color: var(--white);
+      color: var(--fg0);
       transition: all 150ms var(--easing);
 
       &:hover {

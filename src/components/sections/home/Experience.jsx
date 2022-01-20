@@ -18,11 +18,11 @@ const JobsWrapper = styled.div`
 `;
 
 const CompanyName = styled.span`
-  color: var(--light-gray);
+  color: var(--fg1);
 `;
 
 const WorkDuration = styled.p`
-  color: var(--light-gray);
+  color: var(--fg1);
   font-family: "Ubuntu Mono", var(--font-mono-system);
   font-weight: 300;
   font-size: 1.4rem;

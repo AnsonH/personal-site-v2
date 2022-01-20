@@ -31,8 +31,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-size: 1.7rem;
     font-family: "Ubuntu", var(--font-sans-system);
-    background-color: var(--black);
-    color: var(--light-gray);
+    background-color: var(--bg0);
+    color: var(--fg1);
 
     // Blur whole site except the header when mobile dropdown is opened
     &.blur #content > * {
@@ -72,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1,
   h2 {
-    color: var(--white);
+    color: var(--fg0);
     font-family: "Ubuntu Mono", var(--font-mono-system);
     line-height: 1.1;
   }
@@ -144,7 +144,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Ubuntu", var(--font-sans-system);
     font-weight: 500;
     line-height: 1.4;
-    color: var(--white);
+    color: var(--fg0);
 
     @media ${bp.lg} {
       font-size: 2.2rem;

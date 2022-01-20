@@ -26,8 +26,8 @@ const SocialLink = styled(OutboundLink)`
   padding: 1.2rem;
   display: flex;
   border-radius: 4px;
-  background-color: var(--dark-gray);
-  color: var(--white);
+  background-color: var(--bg2);
+  color: var(--fg0);
   font-size: 2.2rem; // Icon size
   transform: scale(1);
   transition: all 250ms var(--easing);

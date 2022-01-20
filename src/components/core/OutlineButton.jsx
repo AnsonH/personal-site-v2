@@ -8,9 +8,9 @@ const styles = (color, hoverColor, sansFont) => css`
   width: max-content; // Prevent button taking 100% width due to flex
   ${({ theme }) => theme.mixins.flexAlignCenter};
 
-  padding: 1.2rem 1.5rem;
+  padding: 1rem 1.5rem;
   border: 1px solid ${color};
-  border-radius: 0.5rem;
+  border-radius: 5px;
   color: ${color};
   font-family: ${sansFont ? `"Ubuntu", var(--font-sans-system)` : `"Ubuntu Mono", var(--font-mono-system)`};
   font-size: ${sansFont ? `1.6rem` : `1.7rem`};
@@ -101,8 +101,8 @@ OutlineButton.propTypes = {
 OutlineButton.defaultProps = {
   type: "button",
   children: "",
-  color: "var(--light-gray)",
-  hoverColor: "var(--light-gray-hover)",
+  color: "var(--fg1)",
+  hoverColor: "var(--fg1-hover)",
   hrefLink: null,
   icon: null,
   sansFont: false,

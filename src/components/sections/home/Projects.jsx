@@ -28,7 +28,7 @@ const ProjectItem = styled.li`
 
 const ProjectImage = styled.div`
   margin-bottom: 3rem;
-  border-radius: 1rem;
+  border-radius: 10px;
   overflow: hidden;
   -webkit-mask-image: -webkit-radial-gradient(white, black); // Fix border radius not working on Safari
 

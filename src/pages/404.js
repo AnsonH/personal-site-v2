@@ -37,7 +37,7 @@ const StyledH2 = styled.h2`
 
 const Subtitle = styled.p`
   margin: 6rem 2.5rem 3rem;
-  color: var(--white);
+  color: var(--fg0);
   text-align: center;
   // 1.5rem for viewport width<480px, 1.5~1.8rem for 480~1080px, 1.8rem for >=1080px
   font-size: clamp(1.5rem, 1.26rem + 0.5vw, 1.8rem);

@@ -27,7 +27,7 @@ const CopyMailButton = styled.button`
   padding: 0.5rem 0.8rem;
   ${({ theme }) => theme.mixins.flexAlignCenter};
 
-  color: var(--light-gray);
+  color: var(--fg1);
   transition: all 200ms var(--easing);
 
   &:hover,

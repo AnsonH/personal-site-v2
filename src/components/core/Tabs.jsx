@@ -72,7 +72,7 @@ const TabButton = styled.button`
   padding: 0.5rem;
   border-right: none;
   border-bottom: 0.2rem solid var(--dark-cyan);
-  color: ${(props) => (props.isActive ? "var(--light-blue)" : "var(--light-gray)")};
+  color: ${(props) => (props.isActive ? "var(--light-blue)" : "var(--fg1)")};
   font-family: "Ubuntu", var(--font-sans-system);
   font-size: 1.5rem;
   font-weight: 500;

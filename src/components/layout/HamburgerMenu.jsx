@@ -47,7 +47,7 @@ const StyledList = styled.ul`
   a {
     width: 100%;
     padding: 1.5rem 0;
-    color: var(--white);
+    color: var(--fg0);
     transition: background-color 150ms var(--easing);
 
     &:hover {

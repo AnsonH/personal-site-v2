@@ -30,7 +30,7 @@ const ImageWrapper = styled.div`
   width: 65%;
   height: 65%;
   max-width: 24rem;
-  border-radius: 5rem;
+  border-radius: 50px;
   overflow: hidden; // Fix border radius not working
   -webkit-mask-image: -webkit-radial-gradient(white, black); // Fix border radius on Safari
   transition: border-radius 250ms var(--easing);
@@ -42,7 +42,7 @@ const ImageWrapper = styled.div`
   }
 
   &:hover {
-    border-radius: 1rem;
+    border-radius: 10px;
   }
 `;
 

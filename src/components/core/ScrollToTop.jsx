@@ -9,7 +9,7 @@ const ButtonWrapper = styled.div`
     display: flex;
     background-color: var(--cyan);
     border-radius: 2.5rem;
-    color: var(--white);
+    color: var(--fg0);
     font-size: 3rem; // Chevron icon size
     transition: background-color 250ms var(--easing);
 
