@@ -77,67 +77,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.1;
   }
 
-  // Add ⠿⠿⠿ symbols around h2 in home page
-  #home h2 {
-    margin-top: 0;
-    margin-bottom: 5rem;
-    display: flex;
-    justify-content: center;
-    font-size: 2.5rem;
-    text-align: center;
-
-    @media ${bp.md} {
-      margin-bottom: 6rem;
-      font-size: 3rem;
-    }
-
-    @media ${bp.lg} {
-      font-size: 3.3rem;
-    }
-
-    @media ${bp.xl} {
-      font-size: 3.6rem;
-    }
-
-    &::before,
-    &::after {
-      content: "⠿⠿⠿";
-      color: var(--dark-cyan);
-      font-weight: 300;
-      font-size: 2rem;
-      margin-top: 0.5rem;
-
-      @media ${bp.md} {
-        content: "⠿⠿⠿⠿⠿";
-        font-size: 2.6rem;
-      }
-
-      @media ${bp.lg} {
-        font-size: 2.9rem;
-      }
-
-      @media ${bp.xl} {
-        font-size: 3.1rem;
-      }
-    }
-
-    &::before {
-      margin-right: 2.2rem;
-
-      @media ${bp.lg} {
-        margin-right: 3rem;
-      }
-    }
-
-    &::after {
-      margin-left: 2.2rem;
-
-      @media ${bp.lg} {
-        margin-left: 3rem;
-      }
-    }
-  }
-
   h3 {
     margin: 0 0 1rem;
     font-size: 1.9rem;

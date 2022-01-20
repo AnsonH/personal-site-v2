@@ -4,7 +4,7 @@ import { IoDocumentTextSharp } from "react-icons/io5";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { resumeUrl, srConfig } from "../../../config";
-import { OutlineButton, Tabs, Wrapper } from "../../core";
+import { H2, OutlineButton, Tabs, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
 
@@ -110,7 +110,7 @@ function Experience() {
   return (
     <section id="experience" ref={experienceRef}>
       <Wrapper paddingY>
-        <h2>Experience</h2>
+        <H2>Experience</H2>
         <JobsWrapper>
           <Tabs>
             <Tabs.TabList>

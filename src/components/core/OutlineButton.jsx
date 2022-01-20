@@ -1,5 +1,4 @@
 import { Link } from "gatsby";
-import { OutboundLink } from "gatsby-plugin-google-gtag";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 import { bp } from "../../styles";
@@ -31,7 +30,7 @@ const StyledButton = styled.button`
   ${(props) => styles(props.color, props.hoverColor, props.sansFont)}
 `;
 
-const StyledAnchor = styled(OutboundLink)`
+const StyledAnchor = styled.a`
   ${(props) => styles(props.color, props.hoverColor, props.sansFont)}
 `;
 

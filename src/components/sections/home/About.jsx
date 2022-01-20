@@ -6,7 +6,7 @@ import { SiGit, SiJavascript, SiLaravel, SiPhp, SiTypescript } from "react-icons
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { srConfig } from "../../../config";
-import { Wrapper } from "../../core";
+import { H2, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { Gatsby, Python } from "../../icons";
 import { bp } from "../../../styles";
@@ -163,7 +163,7 @@ function About() {
   return (
     <section id="about" ref={aboutRef}>
       <Wrapper paddingX_lg paddingY>
-        <h2>About Me</h2>
+        <H2>About Me</H2>
         <Content>
           <ImageWrapper>
             <StaticImage src="../../../images/me.png" alt="Photo of me" />

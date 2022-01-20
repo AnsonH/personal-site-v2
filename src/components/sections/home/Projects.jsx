@@ -7,7 +7,7 @@ import { RiNpmjsFill } from "react-icons/ri";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { srConfig } from "../../../config";
-import { OutlineButton, Wrapper } from "../../core";
+import { H2, OutlineButton, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
 
@@ -66,7 +66,7 @@ const Description = styled.div`
 `;
 
 const TechList = styled.ul`
-  margin: 4.5rem 0 3rem;
+  margin: 3.5rem 0 3rem;
   display: flex;
   font-family: "Ubuntu Mono", var(--font-mono-system);
   font-size: 1.5rem;
@@ -135,7 +135,7 @@ function Projects() {
   return (
     <section id="projects">
       <Wrapper paddingX_lg paddingY>
-        <h2 ref={titleRef}>Projects</h2>
+        <H2 ref={titleRef}>Projects</H2>
         <ul>
           {projects.map((project, index) => {
             const { demo, github, npm, tech, title, thumbnail } = project.frontmatter;

@@ -4,7 +4,7 @@ import { CSSTransition } from "react-transition-group";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { email, srConfig } from "../../../config";
-import { Alert, OutlineButton, Wrapper } from "../../core";
+import { Alert, H2, OutlineButton, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
 
@@ -77,7 +77,7 @@ function Contact() {
   return (
     <section id="contact" ref={contactRef}>
       <Wrapper paddingX_lg paddingY>
-        <h2>Contact Me</h2>
+        <H2>Contact Me</H2>
         <Content>
           <Message>
             Thank you for visiting my site! If you’re looking for a front-end developer, have a question or want to say
