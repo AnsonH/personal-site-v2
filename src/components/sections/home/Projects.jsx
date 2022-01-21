@@ -90,10 +90,10 @@ const LinksWrapper = styled.div`
 `;
 
 function Projects() {
-  const data = useStaticQuery(graphql`
-    query Projects {
+  const featuredData = useStaticQuery(graphql`
+    query FeaturedProjects {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/projects/" } }
+        filter: { fileAbsolutePath: { regex: "/projects/featured/" } }
         sort: { fields: frontmatter___order, order: ASC }
       ) {
         nodes {
@@ -114,11 +114,11 @@ function Projects() {
       }
     }
   `);
-  const projects = data.allMarkdownRemark.nodes;
+  const featuredProjects = featuredData.allMarkdownRemark.nodes;
 
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  const titleRef = useRef();
+  const titleRef = useRef(null);
   const projectItemsRef = useRef([]);
 
   useEffect(() => {
@@ -137,7 +137,7 @@ function Projects() {
       <Wrapper paddingX_lg paddingY>
         <H2 ref={titleRef}>Projects</H2>
         <ul>
-          {projects.map((project, index) => {
+          {featuredProjects.map((project, index) => {
             const { demo, github, npm, tech, title, thumbnail } = project.frontmatter;
 
             return (
