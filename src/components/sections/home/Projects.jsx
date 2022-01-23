@@ -7,11 +7,15 @@ import { RiNpmjsFill } from "react-icons/ri";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { srConfig } from "../../../config";
-import { H2, OutlineButton, Wrapper } from "../../core";
+import { Card, CardsWrapper, H2, OutlineButton, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
 
-const ProjectItem = styled.li`
+const FeaturedList = styled.ul`
+  margin-bottom: 9rem;
+`;
+
+const FeaturedItem = styled.li`
   ${({ theme }) => theme.mixins.flexAlignCenter};
   flex-direction: column;
 
@@ -26,7 +30,7 @@ const ProjectItem = styled.li`
   }
 `;
 
-const ProjectImage = styled.div`
+const FeaturedImage = styled.div`
   margin-bottom: 3rem;
   border-radius: 10px;
   overflow: hidden;
@@ -45,8 +49,8 @@ const ProjectInfo = styled.div`
 `;
 
 const Title = styled.h3`
-  margin-bottom: 3rem;
-  text-align: center;
+  margin-bottom: ${(props) => (props.insideCard ? "2rem" : "3rem")};
+  text-align: ${(props) => (props.insideCard ? "left" : "center")};
 
   @media ${bp.lg} {
     text-align: left;
@@ -54,6 +58,7 @@ const Title = styled.h3`
 `;
 
 const Description = styled.div`
+  color: var(--fg1);
   font-size: 1.5rem;
 
   p {
@@ -66,8 +71,9 @@ const Description = styled.div`
 `;
 
 const TechList = styled.ul`
-  margin: 3.5rem 0 3rem;
+  margin: ${(props) => (props.insideCard ? "0.5rem 0 2rem" : "3.5rem 0 3rem")};
   display: flex;
+  color: var(--fg2);
   font-family: "Ubuntu Mono", var(--font-mono-system);
   font-size: 1.5rem;
 
@@ -76,7 +82,7 @@ const TechList = styled.ul`
   }
 `;
 
-const LinksWrapper = styled.div`
+const BtnLinksWrapper = styled.div`
   display: flex;
   justify-content: center;
 
@@ -89,10 +95,31 @@ const LinksWrapper = styled.div`
   }
 `;
 
+const IconLinksWrapper = styled.div`
+  display: flex;
+  margin-left: -1rem;
+  margin-top: 2rem;
+
+  a:not(:last-child) {
+    margin-right: 1rem;
+  }
+`;
+
+const IconLink = styled.a`
+  padding: 0.6rem;
+  color: var(--fg0);
+  transition: color 150ms var(--easing);
+
+  &:hover,
+  &:focus {
+    color: var(--light-blue);
+  }
+`;
+
 function Projects() {
-  const featuredData = useStaticQuery(graphql`
-    query FeaturedProjects {
-      allMarkdownRemark(
+  const projectsData = useStaticQuery(graphql`
+    query Projects {
+      featured: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/projects/featured/" } }
         sort: { fields: frontmatter___order, order: ASC }
       ) {
@@ -112,20 +139,43 @@ function Projects() {
           }
         }
       }
+
+      others: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/projects/others/" } }
+        sort: { fields: frontmatter___date, order: DESC }
+      ) {
+        nodes {
+          html
+          frontmatter {
+            demo
+            github
+            tech
+            title
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED)
+              }
+            }
+          }
+        }
+      }
     }
   `);
-  const featuredProjects = featuredData.allMarkdownRemark.nodes;
+  const featuredProjects = projectsData.featured.nodes;
+  const otherProjects = projectsData.others.nodes;
 
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const titleRef = useRef(null);
-  const projectItemsRef = useRef([]);
+  const otherTitleRef = useRef(null);
+  const featuredItemsRef = useRef([]);
 
   useEffect(() => {
     if (!prefersReducedMotion) {
       ScrollReveal().reveal(titleRef.current, srConfig.popUp);
+      ScrollReveal().reveal(otherTitleRef.current, srConfig.popUp);
 
-      projectItemsRef.current.forEach((item, index) => {
+      featuredItemsRef.current.forEach((item, index) => {
         const direction = index % 2 === 0 ? "left" : "right";
         ScrollReveal().reveal(item, srConfig.panFrom(direction, 300, "25px"));
       });
@@ -136,16 +186,15 @@ function Projects() {
     <section id="projects">
       <Wrapper paddingX_lg paddingY>
         <H2 ref={titleRef}>Projects</H2>
-        <ul>
+        <FeaturedList>
           {featuredProjects.map((project, index) => {
             const { demo, github, npm, tech, title, thumbnail } = project.frontmatter;
 
             return (
-              <ProjectItem key={index} ref={(element) => projectItemsRef.current.push(element)}>
-                <ProjectImage>
+              <FeaturedItem key={index} ref={(element) => featuredItemsRef.current.push(element)}>
+                <FeaturedImage>
                   <GatsbyImage image={getImage(thumbnail)} alt={title} />
-                </ProjectImage>
-
+                </FeaturedImage>
                 <ProjectInfo>
                   <Title>{title}</Title>
                   <Description dangerouslySetInnerHTML={{ __html: project.html }} />
@@ -154,7 +203,7 @@ function Projects() {
                       <li key={index}>{item}</li>
                     ))}
                   </TechList>
-                  <LinksWrapper>
+                  <BtnLinksWrapper>
                     {github ? (
                       <OutlineButton type="anchor" hrefLink={github} icon={<IoLogoGithub fontSize={24} />} sansFont>
                         Source
@@ -170,12 +219,50 @@ function Projects() {
                         NPM
                       </OutlineButton>
                     ) : null}
-                  </LinksWrapper>
+                  </BtnLinksWrapper>
                 </ProjectInfo>
-              </ProjectItem>
+              </FeaturedItem>
             );
           })}
-        </ul>
+        </FeaturedList>
+
+        <H2 hasDecoration={false} ref={otherTitleRef}>
+          Other Projects
+        </H2>
+        <CardsWrapper>
+          {otherProjects.map((project, index) => {
+            const { demo, github, tech, title, thumbnail } = project.frontmatter;
+
+            return (
+              <Card key={index} hrefLink={demo}>
+                <Card.Image image={getImage(thumbnail)} alt={title} />
+                <Card.Body>
+                  <Title insideCard>{title}</Title>
+                  <Description dangerouslySetInnerHTML={{ __html: project.html }} />
+                </Card.Body>
+                <Card.Footer style={{ paddingBottom: "1.4rem" }}>
+                  <TechList insideCard>
+                    {tech.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </TechList>
+                  <IconLinksWrapper>
+                    {github ? (
+                      <IconLink href={github} aria-label="View source" target="_blank" rel="noreferrer">
+                        <IoLogoGithub fontSize={24} />
+                      </IconLink>
+                    ) : null}
+                    {demo ? (
+                      <IconLink href={demo} aria-label="View demo" target="_blank" rel="noreferrer">
+                        <MdOpenInNew fontSize={24} />
+                      </IconLink>
+                    ) : null}
+                  </IconLinksWrapper>
+                </Card.Footer>
+              </Card>
+            );
+          })}
+        </CardsWrapper>
       </Wrapper>
     </section>
   );

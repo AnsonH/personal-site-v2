@@ -18,7 +18,8 @@ const variables = css`
     --fg2: #929292;
     --bg0: #1f2122;
     --bg1: #2a2c2d;
-    --bg2: #505050;
+    --bg2: #393b3c;
+    --bg3: #505050;
 
     // Font stacks
     --font-sans-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
