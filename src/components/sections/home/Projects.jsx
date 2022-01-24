@@ -49,8 +49,8 @@ const ProjectInfo = styled.div`
 `;
 
 const Title = styled.h3`
-  margin-bottom: ${(props) => (props.insideCard ? "2rem" : "3rem")};
-  text-align: ${(props) => (props.insideCard ? "left" : "center")};
+  margin-bottom: 3rem;
+  text-align: center;
 
   @media ${bp.lg} {
     text-align: left;
@@ -204,21 +204,21 @@ function Projects() {
                     ))}
                   </TechList>
                   <BtnLinksWrapper>
-                    {github ? (
+                    {github && (
                       <OutlineButton type="anchor" hrefLink={github} icon={<IoLogoGithub fontSize={24} />} sansFont>
                         Source
                       </OutlineButton>
-                    ) : null}
-                    {demo ? (
+                    )}
+                    {demo && (
                       <OutlineButton type="anchor" hrefLink={demo} icon={<MdOpenInNew fontSize={24} />} sansFont>
                         Demo
                       </OutlineButton>
-                    ) : null}
-                    {npm ? (
+                    )}
+                    {npm && (
                       <OutlineButton type="anchor" hrefLink={npm} icon={<RiNpmjsFill fontSize={24} />} sansFont>
                         NPM
                       </OutlineButton>
-                    ) : null}
+                    )}
                   </BtnLinksWrapper>
                 </ProjectInfo>
               </FeaturedItem>
@@ -237,7 +237,7 @@ function Projects() {
               <Card key={index} hrefLink={demo}>
                 <Card.Image image={getImage(thumbnail)} alt={title} />
                 <Card.Body>
-                  <Title insideCard>{title}</Title>
+                  <Card.Title>{title}</Card.Title>
                   <Description dangerouslySetInnerHTML={{ __html: project.html }} />
                 </Card.Body>
                 <Card.Footer style={{ paddingBottom: "1.4rem" }}>
@@ -247,16 +247,16 @@ function Projects() {
                     ))}
                   </TechList>
                   <IconLinksWrapper>
-                    {github ? (
+                    {github && (
                       <IconLink href={github} aria-label="View source" target="_blank" rel="noreferrer">
                         <IoLogoGithub fontSize={24} />
                       </IconLink>
-                    ) : null}
-                    {demo ? (
+                    )}
+                    {demo && (
                       <IconLink href={demo} aria-label="View demo" target="_blank" rel="noreferrer">
                         <MdOpenInNew fontSize={24} />
                       </IconLink>
-                    ) : null}
+                    )}
                   </IconLinksWrapper>
                 </Card.Footer>
               </Card>
