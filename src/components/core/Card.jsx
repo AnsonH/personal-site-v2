@@ -28,10 +28,9 @@ const bgColor = css`
 const hoverStyles = css`
   &:hover,
   &:focus-within {
-    transform: translateY(-5px);
-
     .card-root {
       background-color: var(--bg2);
+      transform: translateY(-5px);
     }
 
     .card-title a {
@@ -41,17 +40,15 @@ const hoverStyles = css`
 `;
 
 const StyledCard = styled.li`
-  border-radius: 5px;
-  overflow: hidden;
-  transition: all 300ms var(--easing);
-
   .card-root {
     height: 100%;
     position: relative; // ONLY position card root such that a::before can cover whole card
     display: flex;
     flex-direction: column;
     ${bgColor}
-    transition: inherit;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 300ms var(--easing);
   }
 
   .card-title {

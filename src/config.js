@@ -80,6 +80,7 @@ module.exports = {
       delay: delay,
       distance: distance,
       origin: direction,
+      viewFactor: 0.2,
     }),
     popUp: {
       delay: 200,

@@ -169,6 +169,7 @@ function Projects() {
   const titleRef = useRef(null);
   const otherTitleRef = useRef(null);
   const featuredItemsRef = useRef([]);
+  const otherItemsRef = useRef([]);
 
   useEffect(() => {
     if (!prefersReducedMotion) {
@@ -178,6 +179,12 @@ function Projects() {
       featuredItemsRef.current.forEach((item, index) => {
         const direction = index % 2 === 0 ? "left" : "right";
         ScrollReveal().reveal(item, srConfig.panFrom(direction, 300, "25px"));
+      });
+
+      const BASE_DELAY = 300;
+      const DELAY_INCREMENT = 100;
+      otherItemsRef.current.forEach((item, index) => {
+        ScrollReveal().reveal(item, srConfig.panFrom("bottom", BASE_DELAY + DELAY_INCREMENT * index, "30px"));
       });
     }
   }, []);
@@ -234,7 +241,7 @@ function Projects() {
             const { demo, github, tech, title, thumbnail } = project.frontmatter;
 
             return (
-              <Card key={index} hrefLink={demo}>
+              <Card key={index} hrefLink={demo} ref={(element) => otherItemsRef.current.push(element)}>
                 <Card.Image image={getImage(thumbnail)} alt={title} />
                 <Card.Body>
                   <Card.Title>{title}</Card.Title>
