@@ -15,7 +15,7 @@ const variables = css`
     --fg0: #ffffff;
     --fg1: #c1c1c1;
     --fg1-hover: rgba(178, 178, 178, 0.17);
-    --fg2: #929292;
+    --fg2: #8f8f8f;
     --bg0: #1f2122;
     --bg1: #2a2c2d;
     --bg2: #393b3c;

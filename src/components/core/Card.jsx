@@ -2,6 +2,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
 import { createContext, forwardRef, useContext } from "react";
 import styled, { css } from "styled-components";
+import { bp } from "../../styles";
 
 /* Please wrap <Card /> with <CardsWrapper />.
  *
@@ -100,7 +101,7 @@ function Image({ image, alt }) {
   return <GatsbyImage image={image} alt={alt} />;
 }
 
-function Title({ children }) {
+function Title({ children, ...props }) {
   const { hrefLink } = useContext(CardContext);
 
   const inner = hrefLink ? (
@@ -111,17 +112,31 @@ function Title({ children }) {
     children
   );
 
-  return <h3 className="card-title">{inner}</h3>;
+  return (
+    <h3 className="card-title" {...props}>
+      {inner}
+    </h3>
+  );
 }
 
 const Body = styled.div`
-  padding: 2rem;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
   flex: 1; // Stretch body to fill remaining height
   transition: all 300ms var(--easing);
+
+  @media ${bp.lg} {
+    padding: 2rem;
+  }
 `;
 
 const Footer = styled.div`
-  padding: 0 2rem 2rem;
+  padding: 0 1.6rem 1.6rem;
+
+  @media ${bp.lg} {
+    padding: 0 2rem 2rem;
+  }
 `;
 
 ///// Dot Notation /////

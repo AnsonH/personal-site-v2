@@ -181,10 +181,9 @@ function Projects() {
         ScrollReveal().reveal(item, srConfig.panFrom(direction, 300, "25px"));
       });
 
-      const BASE_DELAY = 300;
-      const DELAY_INCREMENT = 100;
+      const { baseDelay, delayIncrement } = srConfig.cards;
       otherItemsRef.current.forEach((item, index) => {
-        ScrollReveal().reveal(item, srConfig.panFrom("bottom", BASE_DELAY + DELAY_INCREMENT * index, "30px"));
+        ScrollReveal().reveal(item, srConfig.panFrom("bottom", baseDelay + delayIncrement * index, "30px"));
       });
     }
   }, []);

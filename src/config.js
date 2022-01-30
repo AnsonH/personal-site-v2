@@ -20,6 +20,10 @@ module.exports = {
       url: "/#experience",
     },
     {
+      label: "Blog",
+      url: "/#blog",
+    },
+    {
       label: "Projects",
       url: "/#projects",
     },
@@ -86,6 +90,10 @@ module.exports = {
       delay: 200,
       scale: 0.92,
       viewFactor: 0.25,
+    },
+    cards: {
+      baseDelay: 300,
+      delayIncrement: 100,
     },
   },
 };

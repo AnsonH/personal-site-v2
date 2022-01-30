@@ -51,6 +51,9 @@ const Description = styled.div`
 
   @media ${bp.lg} {
     margin-top: 0;
+  }
+
+  @media ${bp.xl} {
     font-size: 1.8rem;
   }
 

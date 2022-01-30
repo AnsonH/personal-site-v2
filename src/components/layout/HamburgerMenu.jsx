@@ -33,7 +33,7 @@ const DropdownMenu = styled.div`
   overflow: hidden; // Hide links when not opened
 
   &.open {
-    height: 24rem;
+    height: 29rem;
   }
 `;
 
