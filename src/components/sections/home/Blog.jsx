@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import { graphql, useStaticQuery } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import { useEffect, useRef } from "react";
@@ -6,6 +8,7 @@ import styled from "styled-components";
 import { srConfig } from "../../../config";
 import { Card, CardsWrapper, H2, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
+dayjs.extend(relativeTime);
 
 const Description = styled.div`
   color: var(--fg1);
@@ -36,7 +39,7 @@ function Blog() {
       ) {
         nodes {
           frontmatter {
-            date(fromNow: true)
+            date
             title
             url
             thumbnail {
@@ -81,7 +84,7 @@ function Blog() {
                 <Card.Image image={getImage(thumbnail)} alt={title} />
                 <Card.Body>
                   <Card.Title style={{ marginBottom: "1.5rem" }}>{title}</Card.Title>
-                  <PostTime>{date}</PostTime>
+                  <PostTime>{dayjs(date).fromNow()}</PostTime>
                   <Description dangerouslySetInnerHTML={{ __html: blogPost.html }} />
                 </Card.Body>
               </Card>

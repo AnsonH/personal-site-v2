@@ -11,7 +11,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
-    "start": "npm run develop",
+    "start": "yarn run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write **/*.{js,jsx,ts,tsx,json,md}",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
+    "dayjs": "^1.10.8",
     "gatsby": "3.10.2",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-google-gtag": "^3.14.0",
