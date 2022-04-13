@@ -1,14 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { MdDesktopMac } from "react-icons/md";
-import { IoDocumentTextSharp } from "react-icons/io5";
 import Typist from "react-typist";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { OutlineButton, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
-import { resumeUrl, reactTypistConfig, srConfig } from "../../../config";
+import { reactTypistConfig, srConfig } from "../../../config";
 
 const StyledSection = styled.section`
   padding: 4rem 0;
@@ -253,15 +252,6 @@ function Hero() {
                   targetBlank={false}
                 >
                   Projects
-                </OutlineButton>
-                <OutlineButton
-                  type="anchor"
-                  color="var(--light-blue)"
-                  hoverColor="var(--light-blue-hover)"
-                  hrefLink={resumeUrl}
-                  icon={<IoDocumentTextSharp fontSize={24} />}
-                >
-                  Resume
                 </OutlineButton>
               </CTA>
             </Details>
