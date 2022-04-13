@@ -4,7 +4,7 @@ company: "Ackuis Technology Limited"
 companyShort: "Ackuis"
 title: "Intern Software Developer"
 range: "Jun ~ Sep 2020"
-remote: "false"
+annotation: null
 ---
 
 - Developed and maintained code for clients’ responsive websites using **HTML** and **SCSS**

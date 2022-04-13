@@ -1,18 +1,15 @@
 import { useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { IoDocumentTextSharp } from "react-icons/io5";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
-import { resumeUrl, srConfig } from "../../../config";
-import { H2, OutlineButton, Tabs, Wrapper } from "../../core";
+import { srConfig } from "../../../config";
+import { H2, Tabs, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
 
 const JobsWrapper = styled.div`
-  margin-bottom: 9rem;
-
   @media ${bp.lg} {
-    margin: 0 auto 10rem;
+    margin: 0 auto 2rem;
     max-width: 86rem;
   }
 `;
@@ -27,8 +24,9 @@ const WorkDuration = styled.p`
   font-weight: 300;
   font-size: 1.4rem;
 
-  .remote {
+  .annotation {
     margin-left: 2rem;
+    color: var(--fg2);
   }
 
   @media ${bp.lg} {
@@ -63,18 +61,6 @@ const WorkDescription = styled.div`
   }
 `;
 
-const ResumeWrapper = styled.div`
-  p {
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  // Resume button
-  a {
-    margin: 0 auto;
-  }
-`;
-
 function Experience() {
   const data = useStaticQuery(graphql`
     query Experience {
@@ -88,7 +74,7 @@ function Experience() {
             companyShort
             date
             range
-            remote
+            annotation
             title
           }
           html
@@ -122,7 +108,7 @@ function Experience() {
             </Tabs.TabList>
             <Tabs.Panels>
               {jobs.map((job, i) => {
-                const { company, title, range, remote } = job.frontmatter;
+                const { company, title, range, annotation } = job.frontmatter;
 
                 return (
                   <Tabs.Panel key={i} index={i}>
@@ -132,7 +118,7 @@ function Experience() {
                     </h3>
                     <WorkDuration>
                       {range}
-                      {remote === "true" && <span className="remote">&#47;&#47; Remote Work</span>}
+                      {annotation && <span className="annotation">&#47;&#47; {annotation}</span>}
                     </WorkDuration>
                     <WorkDescription dangerouslySetInnerHTML={{ __html: job.html }} />
                   </Tabs.Panel>
@@ -141,18 +127,6 @@ function Experience() {
             </Tabs.Panels>
           </Tabs>
         </JobsWrapper>
-        <ResumeWrapper>
-          <p>Interested in my full resume?</p>
-          <OutlineButton
-            type="anchor"
-            color="var(--light-blue)"
-            hoverColor="var(--light-blue-hover)"
-            hrefLink={resumeUrl}
-            icon={<IoDocumentTextSharp fontSize={24} />}
-          >
-            Resume
-          </OutlineButton>
-        </ResumeWrapper>
       </Wrapper>
     </section>
   );

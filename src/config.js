@@ -3,7 +3,6 @@
 module.exports = {
   email: "ansonheung2000@gmail.com",
   repoLink: "https://github.com/AnsonH/personal-site-v2",
-  resumeUrl: "https://bit.ly/3uc5UAD",
 
   themeColor: {
     darkCyan: "#21555b",
