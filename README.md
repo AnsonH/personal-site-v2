@@ -10,9 +10,9 @@
   </a>
 </div>
 
-![Demo](./src/images/demo.png)
+![Demo](./src/images/demo.jpg)
 
-## Development :hammer_and_wrench:
+## Development
 
 ```bash
 # 1. Install the Gatsby CLI & Yarn package manager if you haven't
@@ -29,7 +29,7 @@ yarn
 gatsby develop
 ```
 
-## Production Preview :rocket:
+## Production Preview
 
 ```bash
 # 1. Build static assets
@@ -39,7 +39,7 @@ gatsby build
 gatsby serve
 ```
 
-## What's New in v2? :bulb:
+## What's New in v2?
 
 v2 is mostly a re-implementation of my [v1 Personal Website](https://github.com/AnsonH/AnsonH.github.io), which is created using HTML, Sass & Javascript. v2 includes minor improvements on the website design and accessibility.
 
@@ -51,6 +51,6 @@ Here are a few reasons why I re-implemented it using Gatsby:
 - Since I'll add a blog section in the future, using a static site generator makes a lot of sense
 - To get more familiar with the Gatsby framework
 
-## Special Thanks :pray:
+## Special Thanks
 
 The website design and this repo's structure are greatly inspired by [Brittany Chiang's personal website](https://brittanychiang.com/) ([GitHub repo](https://github.com/bchiang7/v4)). You should definitely check out her site :smile:
