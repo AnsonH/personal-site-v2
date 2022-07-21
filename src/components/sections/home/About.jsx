@@ -169,7 +169,7 @@ function About() {
         <H2>About Me</H2>
         <Content>
           <ImageWrapper>
-            <StaticImage src="../../../images/me.png" alt="Photo of me" />
+            <StaticImage src="../../../images/avatar.jpg" alt="Photo of me" />
           </ImageWrapper>
           <Description>
             <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
