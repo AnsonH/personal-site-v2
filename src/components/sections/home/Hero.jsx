@@ -239,7 +239,7 @@ function Hero() {
 
             <Details ref={detailsRef} visible={prefersReducedMotion}>
               <Description>
-                I’m a year 4 student from HKUST who is passionate about building websites with stunning interfaces and
+                I’m a year 5 student from HKUST who is passionate about building websites with stunning interfaces and
                 experiences.
               </Description>
               <CTA>
