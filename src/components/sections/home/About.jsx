@@ -8,7 +8,7 @@ import styled from "styled-components";
 import { srConfig } from "../../../config";
 import { H2, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
-import { Gatsby, Python } from "../../icons";
+import { Flutter, Python } from "../../icons";
 import { bp } from "../../../styles";
 
 const Content = styled.div`
@@ -119,8 +119,8 @@ const skills = [
       label: "React",
     },
     {
-      icon: <Gatsby {...skillIconProps} />,
-      label: "Gatsby",
+      icon: <Flutter {...skillIconProps} />,
+      label: "Flutter",
     },
     {
       icon: <Python {...skillIconProps} />,

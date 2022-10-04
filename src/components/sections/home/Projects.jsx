@@ -240,7 +240,7 @@ function Projects() {
             const { demo, github, tech, title, thumbnail } = project.frontmatter;
 
             return (
-              <Card key={index} hrefLink={demo} ref={(element) => otherItemsRef.current.push(element)}>
+              <Card key={index} hrefLink={demo ?? github} ref={(element) => otherItemsRef.current.push(element)}>
                 <Card.Image image={getImage(thumbnail)} alt={title} />
                 <Card.Body>
                   <Card.Title>{title}</Card.Title>
