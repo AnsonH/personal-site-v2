@@ -1,7 +1,7 @@
 ---
 date: "2020-06-08"
-company: "Ackuis Technology Limited"
-companyShort: "Ackuis"
+company: "POPBO Net Limited"
+companyShort: "POPBO"
 title: "Intern Software Developer"
 range: "Jun ~ Sep 2020"
 annotation: null
