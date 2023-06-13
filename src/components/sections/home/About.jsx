@@ -1,15 +1,15 @@
-import { useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { useEffect, useRef } from "react";
 import { IoLogoReact, IoLogoSass } from "react-icons/io5";
-import { SiGit, SiJavascript, SiLaravel, SiPhp, SiTypescript } from "react-icons/si";
+import { SiGit, SiMui, SiTailwindcss, SiTypescript } from "react-icons/si";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
 import { srConfig } from "../../../config";
-import { H2, Wrapper } from "../../core";
 import { usePrefersReducedMotion } from "../../../hooks";
-import { Flutter, Python } from "../../icons";
 import { bp } from "../../../styles";
+import { H2, Wrapper } from "../../core";
+import { Flutter, NextJs, Python } from "../../icons";
 
 const Content = styled.div`
   ${({ theme }) => theme.mixins.flexAlignCenter};
@@ -100,24 +100,35 @@ const skills = [
   // List 1
   [
     {
-      icon: <IoLogoSass color="#CD6799" {...skillIconProps} />,
-      label: "Sass",
-    },
-    {
-      icon: <SiJavascript color="#F7DF1E" {...skillIconProps} />,
-      label: "JavaScript (ES6+)",
-    },
-    {
       icon: <SiTypescript color="#3178c6" {...skillIconProps} />,
       label: "TypeScript",
+    },
+    {
+      icon: <IoLogoReact color="#00D8FF" {...skillIconProps} />,
+      label: "React",
+    },
+    {
+      icon: <NextJs {...skillIconProps} />,
+      label: "Next.js",
     },
   ],
   // List 2
   [
     {
-      icon: <IoLogoReact color="#00D8FF" {...skillIconProps} />,
-      label: "React",
+      icon: <SiTailwindcss color="#38BDF8" {...skillIconProps} />,
+      label: "Tailwind CSS",
     },
+    {
+      icon: <SiMui color="#007FFF" {...skillIconProps} />,
+      label: "Material UI",
+    },
+    {
+      icon: <IoLogoSass color="#CD6799" {...skillIconProps} />,
+      label: "Sass",
+    },
+  ],
+  // List 3
+  [
     {
       icon: <Flutter {...skillIconProps} />,
       label: "Flutter",
@@ -125,17 +136,6 @@ const skills = [
     {
       icon: <Python {...skillIconProps} />,
       label: "Python",
-    },
-  ],
-  // List 3
-  [
-    {
-      icon: <SiPhp color="#777BB3" {...skillIconProps} />,
-      label: "PHP",
-    },
-    {
-      icon: <SiLaravel color="#FF2D20" {...skillIconProps} />,
-      label: "Laravel",
     },
     {
       icon: <SiGit color="#DE4C36" {...skillIconProps} />,
