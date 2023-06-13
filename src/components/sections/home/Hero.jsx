@@ -1,13 +1,13 @@
-import { useState, useEffect, useRef } from "react";
-import { FaChevronRight } from "react-icons/fa";
-import { MdDesktopMac } from "react-icons/md";
+import { useEffect, useRef, useState } from "react";
+import { FaChevronRight, FaFileAlt } from "react-icons/fa";
+import { MdOutlineDesktopMac } from "react-icons/md";
 import Typist from "react-typist";
 import ScrollReveal from "scrollreveal";
 import styled from "styled-components";
-import { OutlineButton, Wrapper } from "../../core";
+import { reactTypistConfig, srConfig } from "../../../config";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { bp } from "../../../styles";
-import { reactTypistConfig, srConfig } from "../../../config";
+import { OutlineButton, Wrapper } from "../../core";
 
 const StyledSection = styled.section`
   padding: 4rem 0;
@@ -239,16 +239,25 @@ function Hero() {
 
             <Details ref={detailsRef} visible={prefersReducedMotion}>
               <Description>
-                I’m a year 5 student from HKUST who is passionate about building websites with stunning interfaces and
-                experiences.
+                I’m an engineer from Hong Kong who enjoys building websites with stunning interfaces and experiences.
               </Description>
               <CTA>
                 <OutlineButton
                   type="anchor"
                   color="var(--orange)"
                   hoverColor="var(--orange-hover)"
+                  hrefLink="#blog"
+                  icon={<FaFileAlt fontSize={24} />}
+                  targetBlank={false}
+                >
+                  Blog
+                </OutlineButton>
+                <OutlineButton
+                  type="anchor"
+                  color="var(--light-blue)"
+                  hoverColor="var(--light-blue-hover)"
                   hrefLink="#projects"
-                  icon={<MdDesktopMac fontSize={24} />}
+                  icon={<MdOutlineDesktopMac fontSize={24} />}
                   targetBlank={false}
                 >
                   Projects
