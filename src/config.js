@@ -39,11 +39,6 @@ module.exports = {
       url: "https://github.com/AnsonH",
     },
     {
-      title: "Twitter",
-      hoverColor: "#1d9bf0",
-      url: "https://twitter.com/AnsonH_",
-    },
-    {
       title: "Stack Overflow",
       hoverColor: "#f48024",
       url: "https://stackoverflow.com/users/11067496/ansonh",
