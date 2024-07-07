@@ -1,6 +1,6 @@
 ---
 date: "2021-10"
-order: 1
+order: 2
 title: "youtube-playlist-export"
 github: "https://github.com/AnsonH/youtube-playlist-export"
 npm: "https://www.npmjs.com/package/youtube-playlist-export"
